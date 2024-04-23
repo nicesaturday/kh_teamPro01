@@ -64,3 +64,4 @@
 ### 4-2-2. 논리적 설계
 ![논리적 설계](./info/erd/teamPro01_logical_erd.drawio.png)
 ### 4-2-3. 물리적 설계
+![물리적 설계](./info/erd/physical_erd.drawio.png)

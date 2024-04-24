@@ -13,7 +13,7 @@
 숙박 및 축제와 기타 행사들을 소개해주려고 한다.
 ```
 
-## 3. 프로젝트 개발 환경 정보(Project Development Envirment)  
+## 3. 프로젝트 개발 환경 정보(Project Development Envirment)   
 
 
     - Topic : Jeonju intro web application

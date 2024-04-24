@@ -55,7 +55,7 @@
 ![카드 소팅](./info/boardmix.png)
 
 #### 4-1-3. 서비스 흐름 설계
-
+![서비스 설계](./info/service.drawio.png)
 
 ### 4-2. 데이터베이스 설계(Database Design)
 

@@ -60,8 +60,8 @@
 ### 4-2. 데이터베이스 설계(Database Design)
 
 #### 4-2-1. 개념적 설계
-![개념적 설계](./info/erd/teamPro01_conceptual_erd.drawio.png)
+![개념적 설계](./info/erd/conceptual_erd.drawio.png)
 ### 4-2-2. 논리적 설계
-![논리적 설계](./info/erd/teamPro01_logical_erd.drawio.png)
+![논리적 설계](./info/erd/logical_erd.drawio.png)
 ### 4-2-3. 물리적 설계
 ![물리적 설계](./info/erd/physical_erd.drawio.png)

@@ -1,14 +1,16 @@
 package org.jeonju.dto;
 
 public class User {
-	private int id;
+	private int no;
+	private String id;
 	private String email;
 	private String name;
 	private int pw;
 	private String phone_num;
 	private String address;
-	public User(int id, String email, String name, int pw, String phone_num, String address) {
+	public User(int no, String id, String email, String name, int pw, String phone_num, String address) {
 		super();
+		this.no = no;
 		this.id = id;
 		this.email = email;
 		this.name = name;
@@ -16,10 +18,16 @@ public class User {
 		this.phone_num = phone_num;
 		this.address = address;
 	}
-	public int getId() {
+	public int getNo() {
+		return no;
+	}
+	public void setNo(int no) {
+		this.no = no;
+	}
+	public String getId() {
 		return id;
 	}
-	public void setId(int id) {
+	public void setId(String id) {
 		this.id = id;
 	}
 	public String getEmail() {
@@ -54,9 +62,11 @@ public class User {
 	}
 	@Override
 	public String toString() {
-		return "User [id=" + id + ", email=" + email + ", name=" + name + ", pw=" + pw + ", phone_num=" + phone_num
-				+ ", address=" + address + "]";
+		return "User [no=" + no + ", id=" + id + ", email=" + email + ", name=" + name + ", pw=" + pw + ", phone_num="
+				+ phone_num + ", address=" + address + "]";
 	}
+	
+	
 	
 	
 }

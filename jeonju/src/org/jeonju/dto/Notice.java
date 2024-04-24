@@ -1,24 +1,24 @@
 package org.jeonju.dto;
 
 public class Notice {
-	private int id;
+	private int no;
 	private String title;
 	private String comment;
 	private String resdate;
 	private int visited;
-	public Notice(int id, String title, String comment, String resdate, int visited) {
+	public Notice(int no, String title, String comment, String resdate, int visited) {
 		super();
-		this.id = id;
+		this.no = no;
 		this.title = title;
 		this.comment = comment;
 		this.resdate = resdate;
 		this.visited = visited;
 	}
-	public int getId() {
-		return id;
+	public int getNo() {
+		return no;
 	}
-	public void setId(int id) {
-		this.id = id;
+	public void setNo(int no) {
+		this.no = no;
 	}
 	public String getTitle() {
 		return title;
@@ -46,9 +46,10 @@ public class Notice {
 	}
 	@Override
 	public String toString() {
-		return "Notice [id=" + id + ", title=" + title + ", comment=" + comment + ", resdate=" + resdate + ", visited="
+		return "Notice [no=" + no + ", title=" + title + ", comment=" + comment + ", resdate=" + resdate + ", visited="
 				+ visited + "]";
 	}
+	
 	
 	
 }

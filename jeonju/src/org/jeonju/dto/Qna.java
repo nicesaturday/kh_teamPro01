@@ -1,31 +1,31 @@
 package org.jeonju.dto;
 
 public class Qna {
-	private int id;
+	private int no;
 	private String title;
 	private String comment;
 	private int q_level;
-	private int userid;
+	private int userno;
 	private String paremail;
 	private String resdate;
 	private int visited;
-	public Qna(int id, String title, String comment, int q_level, int userid, String paremail, String resdate,
+	public Qna(int no, String title, String comment, int q_level, int userno, String paremail, String resdate,
 			int visited) {
 		super();
-		this.id = id;
+		this.no = no;
 		this.title = title;
 		this.comment = comment;
 		this.q_level = q_level;
-		this.userid = userid;
+		this.userno = userno;
 		this.paremail = paremail;
 		this.resdate = resdate;
 		this.visited = visited;
 	}
-	public int getId() {
-		return id;
+	public int getNo() {
+		return no;
 	}
-	public void setId(int id) {
-		this.id = id;
+	public void setNo(int no) {
+		this.no = no;
 	}
 	public String getTitle() {
 		return title;
@@ -45,11 +45,11 @@ public class Qna {
 	public void setQ_level(int q_level) {
 		this.q_level = q_level;
 	}
-	public int getUserid() {
-		return userid;
+	public int getUserno() {
+		return userno;
 	}
-	public void setUserid(int userid) {
-		this.userid = userid;
+	public void setUserno(int userno) {
+		this.userno = userno;
 	}
 	public String getParemail() {
 		return paremail;
@@ -71,9 +71,10 @@ public class Qna {
 	}
 	@Override
 	public String toString() {
-		return "Qna [id=" + id + ", title=" + title + ", comment=" + comment + ", q_level=" + q_level + ", userid="
-				+ userid + ", paremail=" + paremail + ", resdate=" + resdate + ", visited=" + visited + "]";
+		return "Qna [no=" + no + ", title=" + title + ", comment=" + comment + ", q_level=" + q_level + ", userno="
+				+ userno + ", paremail=" + paremail + ", resdate=" + resdate + ", visited=" + visited + "]";
 	}
+	
 	
 	
 	

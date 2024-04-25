@@ -37,13 +37,13 @@ create table tourism(no int auto_increment primary key, name varchar(500) not nu
    
   
   drop table t_bought;
-create table t_bought(no int auto_increment primary key , staydate date not null, resdate datetime default now() , user_no int not null , t_no int not null , foreign key (user_no) references user(no) ,foreign key (t_no) references tourism(no));
+create table t_bought(no int auto_increment primary key , staydate date not null, resdate datetime default now() , user_no int not null , t_no int not null , foreign key (user_no) references user(no) on delete cascade ,foreign key (t_no) references tourism(no) on delete cascade);
   desc t_bought;
 
   
   
   drop table qna;
-create table qna(no int auto_increment primary key , user_no int not null, title varchar(1000) not null , comment varchar(2000) not null , q_level int not null , parno int ,resdate datetime default now() , visited int default 0 , foreign key (user_no) references user(no) );
+create table qna(no int auto_increment primary key , user_no int not null, title varchar(1000) not null , comment varchar(2000) not null , q_level int not null , parno int ,resdate datetime default now() , visited int default 0 , foreign key (user_no) references user(no) on delete cascade );
   desc qna;
   
   

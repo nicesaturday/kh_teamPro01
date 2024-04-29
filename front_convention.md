@@ -41,23 +41,29 @@ Character encoding, 개행 처리 방법, 들여쓰기 방법(tab or space) 등�
 HTML5 DTD(Document Type Definition)로 선언합니다.
 추가적으로 자기 마침 태그 (Self-Closing Tags)에 후행 슬래시(/)를 사용하지 않습니다.
 <br>
+```
 <!-- Bad -->
 <input />
 <br />
 
 <!-- Good -->
 <input>
+```
 <br>
+
+
 ## Naming Rule
 
 - 이름은 영문 소문자, 숫자, 언더스코어(_)로 작성합니다.
 - 시작 이름은 영문 소문자로만 시작할 수 있습니다.
 - 언더스코어는 단어와 단어를 조합할 때만 사용합니다.
 - 언더스코어가 포함된 약속어는 숫자, 영문 소문자와 조합하여 사용할 수 있습니다.
+<br>
+```
 | 기본형 | 잘못된 예 | 올바른 예 | 
-|--------|---------|-------|--------|----------|-------|
-| name | nameList | name_list | 
-
+| name  | nameList | name_list | 
+```
+<br>
 ## id, class Naming Rule
 
 - id는 문서 전체의 고유 식별자 이므로 한 문서에서 동일한 id를 여러 번 사용하지 않습니다.
@@ -71,12 +77,14 @@ HTML5 DTD(Document Type Definition)로 선언합니다.
 HTML은 DTD의 명세에 맞게 작성하며, W3C Validation을 통과해야 합니다.
 DTD를 제외한 모든 엘리먼트와 애트리뷰트는 소문자로 작성합니다.
 <br>
-
+```
 <!-- Bad -->
 <SPAN Class="desc">간단한 설명</SPAN>
 
 <!-- Good -->
 <span class="desc">간단한 설명</span>
+```
+<br>
 
 ### HTML 애트리뷰트 작성 규칙
 
@@ -84,12 +92,14 @@ DTD를 제외한 모든 엘리먼트와 애트리뷰트는 소문자로 작성�
 - class, style을 선언할 때는 제일 뒷부분에 선언합니다.
 - 애트리뷰트의 순서가 비슷한 엘리먼트끼리 통일되므로 검색하기 편해집니다.
 <br>
+```
 <!-- Good -->
 <input type="text" id="user_id" title="사용자" class="input_txt" style="width:100px">
 
 <br><br><br><br>
 
-
+```
+<br>
 
 
 
@@ -113,7 +123,6 @@ DTD를 제외한 모든 엘리먼트와 애트리뷰트는 소문자로 작성�
 ## Syntax
 
 - Lint 사용을 권장합니다.
-- CSS 클래스 이름은 케밥 표기법(kebab-case)으로 작성합니다. 알파벳으로 시작하되 숫자나 특수문자로 시작해서는 안 됩니다.
 - CSS id는 카멜 케이스(Camel case)로 작성합니다.
 - 들여쓰기는 2개의 공백 문자(소프트탭)을 사용하며, 통일된 규칙으로 작성해도 됩니다.
 - 프로퍼티는 한 줄에 하나씩 작성하며, 영문 소문자로 작성합니다.
@@ -126,7 +135,7 @@ DTD를 제외한 모든 엘리먼트와 애트리뷰트는 소문자로 작성�
 ## Selectors
 
 - 태그 이름과 선택자는 가급적 중첩하지 않습니다.
-- 들여쓰기의 깊이는 4 Depth까지 사용하며, 가급적 1 Depth만을 사용합니다.
+
 
 ## z-index
 

@@ -58,12 +58,14 @@ HTML5 DTD(Document Type Definition)로 선언합니다.
 - 시작 이름은 영문 소문자로만 시작할 수 있습니다.
 - 언더스코어는 단어와 단어를 조합할 때만 사용합니다.
 - 언더스코어가 포함된 약속어는 숫자, 영문 소문자와 조합하여 사용할 수 있습니다.
-<br>
+<br><br>
+
 ```
 | 기본형 | 잘못된 예 | 올바른 예 | <br>
 | name  | nameList | name_list | 
 ```
-<br>
+
+<br><br>
 ## id, class Naming Rule
 
 - id는 문서 전체의 고유 식별자 이므로 한 문서에서 동일한 id를 여러 번 사용하지 않습니다.

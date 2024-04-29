@@ -95,18 +95,8 @@ DTD를 제외한 모든 엘리먼트와 애트리뷰트는 소문자로 작성�
 ```
 <!-- Good -->
 <input type="text" id="user_id" title="사용자" class="input_txt" style="width:100px">
-
-<br><br><br><br>
-
 ```
 <br>
-
-
-
-
-
-
-
 
 # CSS 규칙 및 작성법
 

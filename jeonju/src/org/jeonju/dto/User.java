@@ -5,10 +5,14 @@ public class User {
 	private String id;
 	private String email;
 	private String name;
-	private int pw;
+	private String pw;
 	private String phone_num;
 	private String address;
-	public User(int no, String id, String email, String name, int pw, String phone_num, String address) {
+	private String resdate;
+	
+	public User() {}
+	public User(int no, String id, String email, String name, String pw, String phone_num, String address,
+			String resdate) {
 		super();
 		this.no = no;
 		this.id = id;
@@ -17,6 +21,7 @@ public class User {
 		this.pw = pw;
 		this.phone_num = phone_num;
 		this.address = address;
+		this.resdate = resdate;
 	}
 	public int getNo() {
 		return no;
@@ -42,10 +47,10 @@ public class User {
 	public void setName(String name) {
 		this.name = name;
 	}
-	public int getPw() {
+	public String getPw() {
 		return pw;
 	}
-	public void setPw(int pw) {
+	public void setPw(String pw) {
 		this.pw = pw;
 	}
 	public String getPhone_num() {
@@ -60,11 +65,18 @@ public class User {
 	public void setAddress(String address) {
 		this.address = address;
 	}
+	public String getResdate() {
+		return resdate;
+	}
+	public void setResdate(String resdate) {
+		this.resdate = resdate;
+	}
 	@Override
 	public String toString() {
 		return "User [no=" + no + ", id=" + id + ", email=" + email + ", name=" + name + ", pw=" + pw + ", phone_num="
-				+ phone_num + ", address=" + address + "]";
+				+ phone_num + ", address=" + address + ", resdate=" + resdate + "]";
 	}
+	
 	
 	
 	

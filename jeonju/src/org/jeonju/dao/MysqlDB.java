@@ -7,8 +7,8 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 
 public class MysqlDB {
-	Connection con = null;
-	final static String URL = "jdbc:mysql://localhost:3306:jeonju";
+	private Connection con = null;
+	private String URL = "jdbc:mysql://localhost:3306:jeonju";
 	final static String USERID = "root";
 	final static String USERPW = "1234";
 	

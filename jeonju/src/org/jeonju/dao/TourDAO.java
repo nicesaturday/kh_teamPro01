@@ -9,7 +9,7 @@ import java.util.List;
 import org.jeonju.dto.tour.TBought;
 import org.jeonju.dto.tour.Tourism;
 
-public class TourDAO implements SqlLang {
+public class TourDAO {
 	Connection con = null;
 	PreparedStatement pstmt = null;
 	ResultSet rs = null;
@@ -19,7 +19,7 @@ public class TourDAO implements SqlLang {
 		List<Tourism> tourismList = new ArrayList<Tourism>();
 		try {
 			con = db.connect();
-			pstmt = con.prepareStatement(TourDAO.GETTOURISMLIST);
+			pstmt = con.prepareStatement(SqlLang.GETTOURISMLIST);
 			rs = pstmt.executeQuery();
 			while(rs.next()) {
 				Tourism tourism = new Tourism(rs.getInt("no"),
@@ -45,7 +45,7 @@ public class TourDAO implements SqlLang {
 		List<TBought> TBoughtList = new ArrayList<TBought>();
 		try {
 			con = db.connect();
-			pstmt = con.prepareStatement(TourDAO.GETTBOUGHTLIST);
+			pstmt = con.prepareStatement(SqlLang.GETTBOUGHTLIST);
 			pstmt.setInt(1, no);
 			rs = pstmt.executeQuery();
 			while(rs.next()) {
@@ -71,7 +71,7 @@ public class TourDAO implements SqlLang {
 		int cnt = 0;
 		try {
 			con = db.connect();
-			pstmt = con.prepareStatement(TourDAO.INSERTTBOUGHT);
+			pstmt = con.prepareStatement(SqlLang.INSERTTBOUGHT);
 			pstmt.setString(1, tbought.getStart_time());
 			pstmt.setInt(2, tbought.getHeadcount());
 			pstmt.setInt(3, tbought.getUser_no());
@@ -90,7 +90,7 @@ public class TourDAO implements SqlLang {
 		int cnt = 0;
 		try {
 			con = db.connect();
-			pstmt = con.prepareStatement(TourDAO.INSERTTBOUGHT);
+			pstmt = con.prepareStatement(SqlLang.INSERTTBOUGHT);
 			pstmt.setString(1, tbought.getStart_time());
 			pstmt.setInt(2, tbought.getHeadcount());
 			pstmt.setInt(3, tbought.getNo());
@@ -109,7 +109,7 @@ public class TourDAO implements SqlLang {
 		
 		try {
 			con = db.connect();
-			pstmt = con.prepareStatement(TourDAO.DELETETBOUGHT);
+			pstmt = con.prepareStatement(SqlLang.DELETETBOUGHT);
 			pstmt.setInt(1, no);
 			cnt = pstmt.executeUpdate();
 		} catch (Exception e) {

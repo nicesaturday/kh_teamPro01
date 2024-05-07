@@ -8,7 +8,7 @@ import java.util.List;
 
 import org.jeonju.dto.Qna;
 
-public class QnaDAO implements SqlLang{
+public class QnaDAO {
 	Connection con = null;
 	PreparedStatement pstmt = null;
 	ResultSet rs = null;
@@ -18,7 +18,7 @@ public class QnaDAO implements SqlLang{
 		List<Qna> qnaList = new ArrayList<Qna>();
 		try {
 			con = db.connect();
-			pstmt = con.prepareStatement(QnaDAO.GETQNALIST);
+			pstmt = con.prepareStatement(SqlLang.GETQNALIST);
 			rs = pstmt.executeQuery();
 			while(rs.next()) {
 				Qna qna = new Qna(rs.getInt("no"),
@@ -54,7 +54,7 @@ public class QnaDAO implements SqlLang{
 				pstmt = null;
 			}
 			
-			pstmt = con.prepareStatement(QnaDAO.GETQNAONE);
+			pstmt = con.prepareStatement(SqlLang.GETQNAONE);
 			pstmt.setInt(1, no);
 			rs = pstmt.executeQuery();
 			if(!isVisit && rs.next()) {
@@ -81,7 +81,7 @@ public class QnaDAO implements SqlLang{
 		int cnt = 0;
 		try {
 			con = db.connect();
-			pstmt = con.prepareStatement(QnaDAO.INSERTQ);
+			pstmt = con.prepareStatement(SqlLang.INSERTQ);
 			pstmt.setInt(1, user_no);
 			pstmt.setString(2, title);
 			pstmt.setString(3, comment);
@@ -104,7 +104,7 @@ public class QnaDAO implements SqlLang{
 		int cnt = 0;
 		try {
 			con = db.connect();
-			pstmt = con.prepareStatement(QnaDAO.INSERTA);
+			pstmt = con.prepareStatement(SqlLang.INSERTA);
 			pstmt.setInt(1, user_no);
 			pstmt.setString(2, title);
 			pstmt.setString(3, comment);

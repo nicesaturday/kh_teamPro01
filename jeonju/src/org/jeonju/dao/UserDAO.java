@@ -8,7 +8,7 @@ import java.util.List;
 
 import org.jeonju.dto.User;
 
-public class UserDAO implements SqlLang {
+public class UserDAO {
 	Connection con = null;
 	PreparedStatement pstmt = null;
 	ResultSet rs = null;
@@ -21,7 +21,7 @@ public class UserDAO implements SqlLang {
 		
 		try {
 			con = db.connect();
-			pstmt = con.prepareStatement(UserDAO.GETUSERONE);
+			pstmt = con.prepareStatement(SqlLang.GETUSERONE);
 			pstmt.setString(1, id);
 			rs = pstmt.executeQuery();
 			if(rs.next()) {
@@ -49,7 +49,7 @@ public class UserDAO implements SqlLang {
 		
 		try {
 			con = db.connect();
-			pstmt = con.prepareStatement(UserDAO.GETUSERALL);
+			pstmt = con.prepareStatement(SqlLang.GETUSERALL);
 			rs = pstmt.executeQuery();
 			while(rs.next()) {
 				User user = new User(rs.getInt("no"),
@@ -75,7 +75,7 @@ public class UserDAO implements SqlLang {
 		int cnt = 0;
 		try {
 			con = db.connect();
-			pstmt = con.prepareStatement(UserDAO.INSERTUSER);
+			pstmt = con.prepareStatement(SqlLang.INSERTUSER);
 			pstmt.setString(1, user.getId());
 			pstmt.setString(2, user.getName());
 			pstmt.setString(3, user.getPw());
@@ -100,7 +100,7 @@ public class UserDAO implements SqlLang {
 		
 		 try {
 			 con = db.connect();
-			 pstmt = con.prepareStatement(UserDAO.UPDATEUSER);
+			 pstmt = con.prepareStatement(SqlLang.UPDATEUSER);
 			 pstmt.setString(1, user.getName());
 			 pstmt.setString(2, user.getPw());
 			 pstmt.setString(3, user.getEmail());
@@ -122,7 +122,7 @@ public class UserDAO implements SqlLang {
 		
 		try {
 			con = db.connect();
-			pstmt = con.prepareStatement(UserDAO.DELETEUSER);
+			pstmt = con.prepareStatement(SqlLang.DELETEUSER);
 			pstmt.setInt(1, no);
 			cnt = pstmt.executeUpdate();
 		} catch (Exception e) {

@@ -6,7 +6,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-public class MysqlDB {
+public class MysqlDB implements SqlLang {
 	private Connection con = null;
 	private String URL = "jdbc:mysql://localhost:3306:jeonju";
 	final static String USERID = "root";

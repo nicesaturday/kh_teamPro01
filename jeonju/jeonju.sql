@@ -22,9 +22,9 @@ create table notice(no int auto_increment primary key, title varchar(1000) not n
 create table shopping(no int auto_increment primary key, name varchar(500) not null , price int not null , comment varchar(2000) , s_level int not null);
     desc shopping;
     
-    drop table lodgment;
-create table lodgment(no int auto_increment primary key, name varchar(500) not null  , l_level int not null , locate varchar(1000), comment varchar(2000) , price int not null);
-    desc lodgment;
+    drop table cultural_facilities;
+create table cultural_facilities(no int auto_increment primary key, name varchar(500) not null , locate varchar(1000), tel varchar(100), img varchar(300), comment varchar(2000) );
+    desc cultural_facilities;
     
     
     drop table user;

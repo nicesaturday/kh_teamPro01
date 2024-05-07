@@ -43,7 +43,7 @@ public class MyTBought extends HttpServlet {
 		request.setAttribute("tboughtList", td.getTBoughtList(no));
 		
 		RequestDispatcher view = request.getRequestDispatcher("/user/t_bought.jsp");
-		
+		view.forward(request, response);
 	}
 
 }

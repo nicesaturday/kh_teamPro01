@@ -52,21 +52,29 @@
             display: flex;
             justify-content: center;
         }
-        .title_box_son1.getcolor {
-            background-color: #F24405;
-            color: white;
-        }
-
+        
         .title_box_son1 {
             width: 20%;
             height: 60%;
             margin-top: 20px;
             background-color: white;
             display: flex;
+            flex-direction: column;
             justify-content: center;
+            align-items: center;
             border-radius: 15px;
             cursor: pointer;
         }
+        .title_box_son1.getcolor {
+            background-color: #F24405;
+            color: white;
+        }
+        
+        .imoticon {
+        	width: 50px;
+        	height: 50px;
+        }
+
 
         #option_wrap {
             width: 1200px;
@@ -142,13 +150,25 @@
             height: 50px;
             font-size: larger;
             font-weight: 500;
-            text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
         #result_wrap div:last-child {
             padding-bottom: 100px;
         }
         .result_wrap_head {
             background-color: #F24405;
+        }
+        #option_switch {
+        	width: 300px;
+        	margin: 20px auto;
+        	display: none;
+        }
+        #option_wrap_item switch a {
+        	inline-style: none;
+        	color: black;
+        	border: 2px solid black;
         }
     </style>
 <body>
@@ -158,12 +178,16 @@
      <div id="title_wrap">
             <h4 id="title_sub_comment">교통수단별 전주 오시는 경로를 안내해드립니다.</h6>
             <div id="title_box">
-                <div class="title_box_son1 getcolor">
-                    <div id="imoticon"></div>
+                <div class="title_box_son1 getcolor" onclick="onClickBus1()">
+                    <div class="imoticon">
+                    	<svg xmlns="http://www.w3.org/2000/svg" width="3em" height="3em" viewBox="0 0 1536 1792"><path fill="currentColor" d="M384 1216q0-53-37.5-90.5T256 1088t-90.5 37.5T128 1216t37.5 90.5T256 1344t90.5-37.5T384 1216m1024 0q0-53-37.5-90.5T1280 1088t-90.5 37.5t-37.5 90.5t37.5 90.5t90.5 37.5t90.5-37.5t37.5-90.5m-46-396l-72-384q-5-23-22.5-37.5T1227 384H309q-23 0-40.5 14.5T246 436l-72 384q-5 30 14 53t49 23h1062q30 0 49-23t14-53m-226-612q0-20-14-34t-34-14H448q-20 0-34 14t-14 34t14 34t34 14h640q20 0 34-14t14-34m400 725v603h-128v128q0 53-37.5 90.5T1280 1792t-90.5-37.5t-37.5-90.5v-128H384v128q0 53-37.5 90.5T256 1792t-90.5-37.5T128 1664v-128H0V933q0-112 25-223l103-454q9-78 97.5-137t230-89T768 0t312.5 30t230 89t97.5 137l105 454q23 102 23 223"/></svg>
+                    </div>
                     <h4>고속버스</h4>
                 </div>
-                <div class="title_box_son1">
-                    <div id="imoticon"></div>
+                <div class="title_box_son1" onclick="onClickBus2()">
+                    <div class="imoticon">
+                    	<svg xmlns="http://www.w3.org/2000/svg" width="3em" height="3em" viewBox="0 0 1536 1792"><path fill="currentColor" d="M384 1216q0-53-37.5-90.5T256 1088t-90.5 37.5T128 1216t37.5 90.5T256 1344t90.5-37.5T384 1216m1024 0q0-53-37.5-90.5T1280 1088t-90.5 37.5t-37.5 90.5t37.5 90.5t90.5 37.5t90.5-37.5t37.5-90.5m-46-396l-72-384q-5-23-22.5-37.5T1227 384H309q-23 0-40.5 14.5T246 436l-72 384q-5 30 14 53t49 23h1062q30 0 49-23t14-53m-226-612q0-20-14-34t-34-14H448q-20 0-34 14t-14 34t14 34t34 14h640q20 0 34-14t14-34m400 725v603h-128v128q0 53-37.5 90.5T1280 1792t-90.5-37.5t-37.5-90.5v-128H384v128q0 53-37.5 90.5T256 1792t-90.5-37.5T128 1664v-128H0V933q0-112 25-223l103-454q9-78 97.5-137t230-89T768 0t312.5 30t230 89t97.5 137l105 454q23 102 23 223"/></svg>
+                    </div>
                     <h4>시외버스</h4>
                 </div>
             </div>
@@ -184,15 +208,43 @@
                     <input id="selectInput" type="date" name="schedule" min="${today }" max="${nextDay }" />                 
             </div>
             <div id="btn">
-                <button onclick="onClick()">조회하기</button>
+                <button onclick="onClickSerch()">조회하기</button>
             </div>
+            <div id="option_switch">
+        		<a href="https://txbus.t-money.co.kr/main.do">시외버스 예약하러 가기</a>
+        	</div>
       </div>
       <div id="result_wrap">
-        
+       
       </div>
 </div>
 <%@ include file="/footer.jsp" %>
 <script>
+		let title_box_son1_1 = document.querySelectorAll(".title_box_son1")[0];
+		let title_box_son1_2 = document.querySelectorAll(".title_box_son1")[1];
+		
+		
+		
+		function onClickBus1() {
+			console.log(title_box_son1_1);
+			if(title_box_son1_1.className == "title_box_son1") {
+				title_box_son1_1.className = "title_box_son1 getcolor";
+				title_box_son1_2.className = "title_box_son1";
+
+			} 
+		}
+		function onClickBus2() {
+			console.log(title_box_son1_2)
+			if(title_box_son1_2.className == "title_box_son1") {
+				title_box_son1_2.className = "title_box_son1 getcolor";
+				title_box_son1_1.className = "title_box_son1";
+
+			}
+		}
+
+
+
+
 		let result_wrap = $("#result_wrap");
 		
 		function make_menu_Layout() {
@@ -202,7 +254,7 @@
 		
 		
 		// 교통정보 API에서 data 받아오기
-        function onClick() {
+        function onClickSerch() {
             let start_lo = $("select[name=start_lo] option:selected").val();
             let end_lo = $("select[name=end_lo] option:selected").val();
             let start_date = $("input[type=date]").val().replace(/[^0-9]/g,"");
@@ -216,6 +268,7 @@
             		alert("버스가 없습니다.");
             	}
             	else {
+            		console.log(data);
             		make_menu_Layout();
                     let result = data.response.body.items.item;
                     result.forEach(function(item) {

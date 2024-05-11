@@ -8,13 +8,13 @@ import java.sql.SQLException;
 
 public class MysqlDB implements SqlLang {
 	private Connection con = null;
-	private String URL = "jdbc:mysql://localhost:3306:jeonju";
+	private String URL = "jdbc:mysql://localhost:3309/jeonju";
 	final static String USERID = "root";
 	final static String USERPW = "1234";
 	
 	public Connection connect() {
 		try {
-			Class.forName("com.mysql.jdbc.Driver");
+			Class.forName("com.mysql.cj.jdbc.Driver");
 			try {
 				con = DriverManager.getConnection(URL,USERID,USERPW);
 			} catch (SQLException e) {e.printStackTrace();}

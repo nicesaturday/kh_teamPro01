@@ -36,6 +36,11 @@ public interface SqlLang {
 	final static String UPDATENOTICE = "update notice set title=? , comment=? where no = ?";
 	final static String UPDATENOTICEVISITED = "update notice set visited=visited+1 where no = ?";
 	
+	//Festival sql
+	final static String GETFESTIVALLIST = "select * from festival";
+	final static String GETFESTIVALONE = "select * from festival where no = ?";
+	
+	
 	//override
 	public Connection connect();
 	public void close(Connection con);

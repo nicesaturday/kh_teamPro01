@@ -21,6 +21,10 @@
 %>
 </head>
     <style>
+    	a {
+    		text-decoration-line: none;
+    		color: white;
+    	}
         #top_wrap {
             width: 1200px;
             height: 50px;
@@ -94,6 +98,7 @@
             background-color: white;
             border: none;
         }
+        
 
         select {
             width: 30%;
@@ -101,6 +106,27 @@
             background-color: white;
             border: none;
             
+        }
+        #option_switch {
+        	background-color: #F24405;
+        	display: none;
+        	color: white;
+        	margin: auto;
+   	 		width: 300px;
+    		height: 50px;
+    		font-size: large;
+    		text-align: center;
+    		justify-content: center;
+    		align-items: center;
+    		border-radius: 10px;
+        }
+        #option_wrap_item option_switch a {
+        	display: inline-block;
+        	width: 200px;
+        	height: 100px;
+        	inline-style: none;
+        	color: black;
+        	border: 2px solid black;
         }
 
         #btn {
@@ -123,6 +149,7 @@
             border: #fff;
             border-radius: 5px;
         }
+        
 
         button:hover {
             width: 90%;
@@ -144,32 +171,28 @@
            	display: grid;
             grid-template-columns: repeat(4,1fr);
             grid-template-rows: auto;
+            gap: 2px;
+            font-weight: 700;
 		}
+		#result_wrap result_wrap_head {
+			font-weight: 800;
+		}
+		
 		#result_wrap div {
             width: 100%;
-            height: 50px;
+            height: 80px;
             font-size: larger;
             font-weight: 500;
             display: flex;
             align-items: center;
             justify-content: center;
-        }
-        #result_wrap div:last-child {
-            padding-bottom: 100px;
+            border-bottom: 2px solid #FEF5EF;
         }
         .result_wrap_head {
             background-color: #F24405;
+            color: white;
         }
-        #option_switch {
-        	width: 300px;
-        	margin: 20px auto;
-        	display: none;
-        }
-        #option_wrap_item switch a {
-        	inline-style: none;
-        	color: black;
-        	border: 2px solid black;
-        }
+        
     </style>
 <body>
 <%@ include file="/header.jsp" %>
@@ -196,14 +219,14 @@
             <div id="option_wrap_item">
                 <select name="start_lo">
                     <option>출발지</option>
+                    <option value="032">동서울</option>
+                    <option value="700">부산</option>
+               		<option value="020">서울센트럴시티</option>
                     <option value="100">인천</option>
-                    <option></option>
-                    <option></option>
                 </select>
                 <select name="end_lo">
                     <option>도착지</option>
                     <option value="602">전주</option>
-                    <option></option>
                 </select>
                     <input id="selectInput" type="date" name="schedule" min="${today }" max="${nextDay }" />                 
             </div>
@@ -222,7 +245,9 @@
 <script>
 		let title_box_son1_1 = document.querySelectorAll(".title_box_son1")[0];
 		let title_box_son1_2 = document.querySelectorAll(".title_box_son1")[1];
-		
+		let option_wrap_item = document.querySelector("#option_wrap_item");
+		let btn = document.querySelector("#btn");
+		let option_switch = document.querySelector("#option_switch");
 		
 		
 		function onClickBus1() {
@@ -230,7 +255,9 @@
 			if(title_box_son1_1.className == "title_box_son1") {
 				title_box_son1_1.className = "title_box_son1 getcolor";
 				title_box_son1_2.className = "title_box_son1";
-
+				option_wrap_item.style.display = "block";
+				btn.style.display = "block";
+				option_switch.style.display = "none";
 			} 
 		}
 		function onClickBus2() {
@@ -238,13 +265,32 @@
 			if(title_box_son1_2.className == "title_box_son1") {
 				title_box_son1_2.className = "title_box_son1 getcolor";
 				title_box_son1_1.className = "title_box_son1";
-
+				option_wrap_item.style.display = "none";
+				btn.style.display = "none";
+				option_switch.style.display = "flex";
 			}
 		}
 
+		function formatDate(timestamp) {
+		    // 숫자를 문자열로 변환합니다.
+		    let dateString = timestamp.toString();
 
+		    // 연도, 월, 일, 시간, 분을 추출합니다.
+		    let year = dateString.substring(0, 4);
+		    let month = dateString.substring(4, 6);
+		    let day = dateString.substring(6, 8);
+		    let hour = dateString.substring(8, 10);
+		    let minute = dateString.substring(10, 12);
 
-
+		    // 원하는 형식으로 조합하여 반환합니다.
+		    return year + "년" + month + "월" + day + "일" + hour + "시" + minute + "분";
+		}
+		
+		
+		
+		
+		
+		
 		let result_wrap = $("#result_wrap");
 		
 		function make_menu_Layout() {
@@ -253,29 +299,31 @@
 		let is_showed = false;
 		
 		
+		
 		// 교통정보 API에서 data 받아오기
         function onClickSerch() {
+        	
             let start_lo = $("select[name=start_lo] option:selected").val();
             let end_lo = $("select[name=end_lo] option:selected").val();
             let start_date = $("input[type=date]").val().replace(/[^0-9]/g,"");
-            console.log(start_date);
         $.ajax({
             url: "https://apis.data.go.kr/1613000/ExpBusInfoService/getStrtpntAlocFndExpbusInfo?serviceKey=oHfkaY88BRbD4M%2Fyx0m%2FtGQPCrjTmC97aKXu0LTqSYr8GwNqviM39OcSFzo00QDQ%2F8wqx98BelfUj%2BrtOSwqyA%3D%3D&pageNo=1&numOfRows=20&_type=json&depTerminalId=NAEK"+start_lo+"&arrTerminalId=NAEK"+end_lo+"&depPlandTime="+start_date+"&busGradeId=1",
             type: "get",
             dataType: "json",
             success:function (data) {
-            	if(!data) {
+            	document.querySelector("#result_wrap").innerHTML = "";
+            	if(data.response.body.items == "") {
             		alert("버스가 없습니다.");
             	}
             	else {
-            		console.log(data);
             		make_menu_Layout();
                     let result = data.response.body.items.item;
                     result.forEach(function(item) {
-                        result_wrap.append("<div><h6>"+item.depPlandTime+"</h6></div><div><h6>"+item.arrPlandTime+"</h6></div><div><h6>"+item.gradeNm+"</h6></div><div><h6>"+item.charge+"원</h6></div>");
+                    	let depPlandTime = formatDate(item.depPlandTime);
+                    	let arrPlandTime = formatDate(item.arrPlandTime);
+                        result_wrap.append("<div><h6>"+depPlandTime+"</h6></div><div><h6>"+arrPlandTime+"</h6></div><div><h6>"+item.gradeNm+"</h6></div><div><h6>"+item.charge+"원</h6></div>");
                     });
-                    is_showed = true;
-                    console.log(data.response.body.items.item);
+ 
             	}
             }
         })

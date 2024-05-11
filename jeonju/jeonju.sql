@@ -19,11 +19,18 @@ create table cultural_facilities(no int auto_increment primary key, name varchar
     
 -- 숙박
     drop table lodgment;
-create table lodgment(no int auto_increment primary key, locate varchar(500), homepage varchar(500) , comment varchar(2000) , img varchar(300) , tel varchar(100) , visited int default 0);
+create table lodgment(no int auto_increment primary key, name varchar(500) not null, locate varchar(500), homepage varchar(500) , comment varchar(2000) , img varchar(300) , tel varchar(100) , visited int default 0);
     desc lodgment;
 
-    
-
+-- 축제
+    drop table festival;
+create table festival(no int auto_increment primary key, name varchar(500) not null, locate varchar(500) , comment varchar(2000) , img varchar(300) , tel varchar(100) , period varchar(200) , homepage varchar(1000) , sub1 varchar(200) , sub2 varchar(200));
+    desc festival;
+insert into festival values(default , '전주대사습놀이' ,  '전주대사습청, 국립무형유산원 외' , 
+'대한민국 전통문화가 살아 숨 쉬는 예향의 고장인 전주에서 국악축제가 펼쳐진다. ''사습놀이''란 조선 숙종때의 마상궁술대회와 영조때의 물놀이와 판소리, 백일장 등 민속무예놀이를 일컫던 말이다. 영조 8년(1732년) 지방 재인청(신청)과 가무 대사습청의 설치에 따라 전주에 4개정(군사정, 의방정, 다기정, 진북정)을 두었고,
+최초로 대사습대회가 베풀어진 뒤 매년 연례행사로 실시되었다.' , 'img/festival_0101.jpg' , '0' , ' 2024. 05.18(토) ~ 06.03(월)' , 'https://www.jjdss.or.kr/' , ' 전주시, (사)전주대사습놀이보존회, ㈜문화방송, 전주MBC' , ' 전주시, (사)전주대사습놀이보존회, ㈜문화방송, 전주MBC'
+)
+delete from festival where no = 1;
     
     
     

@@ -50,6 +50,8 @@ public class FestivalOneApi extends HttpServlet {
 		json.put("locate", festival.getLocate());
 		json.put("comment", festival.getComment());
 		json.put("img", festival.getImg());
+		json.put("sub_img1", festival.getSub_img1());
+		json.put("sub_img2", festival.getSub_img2());
 		json.put("tel", festival.getTel());
 		json.put("period", festival.getPeriod());
 		json.put("homepage", festival.getHomepage());

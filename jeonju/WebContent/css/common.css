@@ -12,11 +12,30 @@ body {
 }
 
 
+a {
+	color: #F24405;
+	text-decoration: none; 
+	outline: none;
+} 
+a:hover {
+	text-decoration: none;
+	color: #F24405;
+	background-color: #F24405;
+}
+
+a:active {
+	text-decoration: none;
+	color: #F24405;
+	background-color: #F24405;
+}
+
+
 /* content */
 #content { 
   	width: 100%; 
   	height: auto;
   	min-height: 100%;
+  	z-index: -1;
 }
  
 

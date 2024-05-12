@@ -19,10 +19,8 @@
   request.setAttribute("today",  today);
   request.setAttribute("nextDay",  nextDay);
 %>
-</head>
     <style>
     	a {
-    		text-decoration-line: none;
     		color: white;
     	}
         #top_wrap {
@@ -78,6 +76,8 @@
         	width: 50px;
         	height: 50px;
         }
+        
+        
 
 
         #option_wrap {
@@ -92,6 +92,19 @@
             width: 900px;
             margin: 20px 5px;
         }
+        
+        select {
+        	position: relative;
+        	width: 30%;
+            height: 60px;
+        	padding-left: 16px;
+        	padding-right: 42px;
+        	background-color: white;
+        	border: 1px solid white;
+        	border-radius: 12px;
+        	cursor: pointer;
+        }
+        
         #selectInput {
             width: 30%;
             height: 60px;
@@ -99,14 +112,6 @@
             border: none;
         }
         
-
-        select {
-            width: 30%;
-            height: 60px;
-            background-color: white;
-            border: none;
-            
-        }
         #option_switch {
         	background-color: #F24405;
         	display: none;
@@ -157,13 +162,7 @@
             font-size: larger;
             transition: all 1s;
         } 
-        input[type="date"]{
-        	width: 30%;
-		    background-color: #0080ff;
-		    color: #ffffff;
-		    border: none;
-		    outline: none;
-		}
+       
 		#result_wrap {
 			width: 1200px;
             height: auto;
@@ -173,6 +172,7 @@
             grid-template-rows: auto;
             gap: 2px;
             font-weight: 700;
+            transition: all 2s;
 		}
 		#result_wrap result_wrap_head {
 			font-weight: 800;
@@ -193,7 +193,46 @@
             color: white;
         }
         
+        
+
+        input[type="date"] {
+        	position: relative;
+        	width: 120px;
+        	height: 48px;
+        	padding-left: 16px;
+        	padding-right: 42px;
+        	background: no-repeat right 21px center / 16px auto;
+        	border: 1px solid white;
+        	border-radius: 12px;
+        }
+        input[type="date"]::-webkit-clear-button,
+        input[type="date"]::-webkit-inner-spin-button {display: none;}
+        input[type="date"]::-webkit-calendar-picker-indicator {
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background: transparent;
+            color: transparent;
+            cursor: pointer;
+        }
+        input[type="date"]::before {
+        	content: attr(data-placeholder);
+        	width: 100%;
+        }
+        input[type="date"]:valid::before {
+        	display: none;
+        }
+       
+        
+        
+
+        
+        
     </style>
+</head>
+
 <body>
 <%@ include file="/header.jsp" %>
 <div id="content">
@@ -228,13 +267,13 @@
                     <option>도착지</option>
                     <option value="602">전주</option>
                 </select>
-                    <input id="selectInput" type="date" name="schedule" min="${today }" max="${nextDay }" />                 
+                    <input id="selectInput"  required type="date" name="schedule" min="${today }" max="${nextDay }" />                 
             </div>
             <div id="btn">
                 <button onclick="onClickSerch()">조회하기</button>
             </div>
             <div id="option_switch">
-        		<a href="https://txbus.t-money.co.kr/main.do">시외버스 예약하러 가기</a>
+        		<a href="https://txbus.t-money.co.kr/main.do" target='_blank'>시외버스 예약하러 가기</a>
         	</div>
       </div>
       <div id="result_wrap">
@@ -302,7 +341,6 @@
 		
 		// 교통정보 API에서 data 받아오기
         function onClickSerch() {
-        	
             let start_lo = $("select[name=start_lo] option:selected").val();
             let end_lo = $("select[name=end_lo] option:selected").val();
             let start_date = $("input[type=date]").val().replace(/[^0-9]/g,"");
@@ -317,6 +355,7 @@
             	}
             	else {
             		make_menu_Layout();
+       		
                     let result = data.response.body.items.item;
                     result.forEach(function(item) {
                     	let depPlandTime = formatDate(item.depPlandTime);

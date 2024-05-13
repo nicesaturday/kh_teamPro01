@@ -17,14 +17,14 @@ import org.jeonju.dto.tour.Tourism;
 /**
  * Servlet implementation class TourList
  */
-@WebServlet("/tourList")
-public class TourList extends HttpServlet {
+@WebServlet("/tour_guide")
+public class TourGuide extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public TourList() {
+    public TourGuide() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -43,7 +43,9 @@ public class TourList extends HttpServlet {
 		
 		tourismList = td.getTourismList();
 		
-		RequestDispatcher view = request.getRequestDispatcher("/tour/tourList.jsp");
+		request.setAttribute("tourismList", tourismList);
+		
+		RequestDispatcher view = request.getRequestDispatcher("/tour/tourGuide.jsp");
 		view.forward(request, response);
 		
 	}

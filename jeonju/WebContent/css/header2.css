@@ -1,0 +1,14 @@
+@charset "UTF-8";
+#hd {width: 100%; z-index: 999; display: flex; justify-content: center; height: 150px; z-index: 999;}
+#main_wrap {width: 100%; display: flex; justify-content: space-around; position: absolute; margin-top: 50px; min-width: 1300px; transition: 0.5s ease;}
+.logo {width: 250px; min-width: 250px;}
+.logo a{ font-family: "Archivo", sans-serif; margin-left: 50px; font-size: 25px; color: #F24405; font-weight: 900; }
+#gnb {clear: both; width:900px; margin: 0 auto; transition: 0.5s; } 
+#gnb:hover .submenu{ height:180px; display: block; }
+#gnb:hover .logo a{ color: #F24405;}
+.menu { display: flex; justify-content: space-around;}
+.item { float: left; display: block; width: 120px; text-align: center;}
+.item > a { font-size: 1.1em; font-weight: 700; color: #333;}
+.submenu {clear: both; height: 0; padding-top: 20px; transition: 0.5s; overflow: hidden; line-height: 2em; font-size: 0.9em; text-align: center;}
+.tnb {display: flex; margin-right: 50px; width: 100px; min-width: 100px;}
+.header-hover { height: 220px; background-color: #fff; z-index: 999; transition: 0.5s; }

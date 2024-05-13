@@ -1,4 +1,4 @@
-package org.jeonju.crtl.traffic;
+package org.jeonju.crtl.tour;
 
 import java.io.IOException;
 
@@ -32,7 +32,7 @@ public class Traffic extends HttpServlet {
 		response.setCharacterEncoding("UTF-8");
 		response.setContentType("text/html; charset=UTF-8");
 		
-		RequestDispatcher view = request.getRequestDispatcher("/traffic/traffic.jsp");
+		RequestDispatcher view = request.getRequestDispatcher("/tour/traffic.jsp");
 		view.forward(request, response);
 	}
 

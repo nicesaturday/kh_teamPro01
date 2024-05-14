@@ -1,8 +1,6 @@
-package org.jeonju.crtl.tour;
+package org.jeonju.crtl.guide;
 
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.List;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -11,20 +9,17 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import org.jeonju.dao.TourDAO;
-import org.jeonju.dto.tour.Tourism;
-
 /**
- * Servlet implementation class TourList
+ * Servlet implementation class Traffic
  */
-@WebServlet("/tour_guide")
-public class TourGuide extends HttpServlet {
+@WebServlet("/traffic")
+public class Traffic extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public TourGuide() {
+    public Traffic() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -37,17 +32,8 @@ public class TourGuide extends HttpServlet {
 		response.setCharacterEncoding("UTF-8");
 		response.setContentType("text/html; charset=UTF-8");
 		
-		List<Tourism> tourismList = new ArrayList<Tourism>();
-		
-		TourDAO td = new TourDAO();
-		
-		tourismList = td.getTourismList();
-		
-		request.setAttribute("tourismList", tourismList);
-		
-		RequestDispatcher view = request.getRequestDispatcher("/tour/tourGuide.jsp");
+		RequestDispatcher view = request.getRequestDispatcher("/tour/traffic.jsp");
 		view.forward(request, response);
-		
 	}
 
 }

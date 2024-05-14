@@ -1,4 +1,4 @@
-package org.jeonju.crtl.travel;
+package org.jeonju.crtl.tour;
 
 import java.io.IOException;
 import java.io.PrintWriter;

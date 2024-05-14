@@ -237,8 +237,8 @@
 </head>
 
 <body>
-<%@ include file="/header.jsp" %>
 <div id="content">
+<%@ include file="/header.jsp" %>
      <div id="top_wrap">대중교통 정보</div>
      <div id="title_wrap">
             <h4 id="title_sub_comment">교통수단별 전주 오시는 경로를 안내해드립니다.</h6>

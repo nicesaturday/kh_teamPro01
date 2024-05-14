@@ -8,9 +8,8 @@
 <%@ include file="/head.jsp" %>
 </head>
 <body>
-<%@ include file="/header.jsp" %>
 <div id="content">content
-
+<%@ include file="/header.jsp" %>
 
 </div>
 <%@ include file="/footer.jsp" %>

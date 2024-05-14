@@ -50,9 +50,8 @@ td:first-child { background-color: #ffe0d8;}
 </style>
 </head>
 <body>
-<%@ include file="/header.jsp" %>
 <div id="content">
-
+<%@ include file="/header.jsp" %>
 
     <div class="page_title"><h2>관광가이드 예약</h2></div>
     <div class="breadcrumb">여행도우미  > 관광가이드 예약</div>

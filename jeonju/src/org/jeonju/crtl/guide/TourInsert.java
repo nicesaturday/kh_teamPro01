@@ -1,4 +1,4 @@
-package org.jeonju.crtl.tour;
+package org.jeonju.crtl.guide;
 
 import java.io.IOException;
 

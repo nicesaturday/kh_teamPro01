@@ -5,7 +5,7 @@
 
 <header id="hd">
 
-   <div id="main_wrap">
+   <div id="hd_main_wrap">
        <div class="logo"><a href="${hpath }" >GO JEONJU.</a>
        </div>
        <nav id="gnb">
@@ -68,12 +68,12 @@
    
    gnb.addEventListener('mouseover', function() {
        
-       document.querySelector('#main_wrap').classList.add('header-hover');
+       document.querySelector('#hd_main_wrap').classList.add('header-hover');
    });
 
    
    gnb.addEventListener('mouseout', function() {
        
-       document.querySelector('#main_wrap').classList.remove('header-hover');
+       document.querySelector('#hd_main_wrap').classList.remove('header-hover');
    });
 </script>

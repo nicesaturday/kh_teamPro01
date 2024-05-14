@@ -1,4 +1,4 @@
-package org.jeonju.crtl.travel;
+package org.jeonju.crtl.tour;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -46,7 +46,7 @@ public class FestivalList extends HttpServlet {
 		
 		request.setAttribute("festivalList", festivalList);
 		
-		RequestDispatcher view = request.getRequestDispatcher("/travel/festival.jsp");
+		RequestDispatcher view = request.getRequestDispatcher("/tour/festival.jsp");
 		view.forward(request, response);
 	}
 

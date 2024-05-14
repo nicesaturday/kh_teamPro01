@@ -50,9 +50,9 @@ td:first-child { background-color: #ffe0d8;}
 </style>
 </head>
 <body>
-</head>
-<body>
 <%@ include file="/header.jsp" %>
+<div id="content">
+
 
     <div class="page_title"><h2>관광가이드 예약</h2></div>
     <div class="breadcrumb">여행도우미  > 관광가이드 예약</div>
@@ -60,28 +60,40 @@ td:first-child { background-color: #ffe0d8;}
     <div class="page_head">
       
             <p>해설과 함께하는<br>전주 도보 예약 투어</p>
-            <div class="imgwrap"><img src="${ hpath}/images/dongosanseong_upscayl_plus.png" alt="관광가이드 예약"></div>
+            <div class="imgwrap"><img src="${ hpath}/img/tour/dongosanseong.png" alt="관광가이드 예약"></div>
     </div>
         
     <div class="contents1">
-        <div><p>
-            전주시에서는 전주지역을 방문하시는 관광객 여러분들의 편의를 돕기 위해<br>문화 관광 해설사 제도를 운영하고 있습니다.<br>
-            예약투어는 문화관광해설사가 함께 하는 투어입니다.<br>관광객 분들의 안전한 관광을 위함이오니 숙지 및 양해 부탁드립니다.
-            <br>※ 시간표에서 원하는 코스의 시간을 확인 후, 시작점으로 오시면 됩니다.
-            <br>※ 기상악화(호우경보, 폭염경보 등)에 따라 투어코스 및 시간이 중단 또는 변동될 수 있습니다.
-            <br>※ 정확한 당일 투어여부는 관광안내소를 통해 확인하실 수 있습니다.</p>
+        <div>
+        	<p>
+            	전주시에서는 전주지역을 방문하시는 관광객 여러분들의 편의를 돕기 위해<br>문화 관광 해설사 제도를 운영하고 있습니다.
+            	<br>
+            	예약투어는 문화관광해설사가 함께 하는 투어입니다.<br>관광객 분들의 안전한 관광을 위함이오니 숙지 및 양해 부탁드립니다.
+            	<br>
+            	※ 시간표에서 원하는 코스의 시간을 확인 후, 시작점으로 오시면 됩니다.
+            	<br>
+            	※ 기상악화(호우경보, 폭염경보 등)에 따라 투어코스 및 시간이 중단 또는 변동될 수 있습니다.
+            	<br>
+            	※ 정확한 당일 투어여부는 관광안내소를 통해 확인하실 수 있습니다.
+            </p>
         </div>
         <div id="tab_wrap">
             <nav class="tab">
                 <ul class="tabnav">
-                    <li><a href="#tab01">코스1</a></li>
+                	<c:forEach begin="1" end="6" varStatus="status" >
+                		<li><a href="#tab0${ status.count}">코스${ status.count}</a></li>
+                	</c:forEach>
+                	
+                    <!-- <li><a href="#tab01">코스1</a></li>
                     <li><a href="#tab02">코스2</a></li>
                     <li><a href="#tab03">코스3</a></li>
                     <li><a href="#tab04">코스4</a></li>
                     <li><a href="#tab05">코스5</a></li>
-                    <li><a href="#tab06">코스6</a></li>
+                    <li><a href="#tab06">코스6</a></li> -->
+                    
                 </ul>
                 <div class="tabcontent">
+                
                     <div id="tab01">
                         <h2 class="tourtitle">경기전 역사투어</h2>
                         <br>
@@ -90,11 +102,12 @@ td:first-child { background-color: #ffe0d8;}
                         <p><strong>해설</strong></p> 
                         <p>한·영·중·일 (매일 11시, 14시) / 한국어 (매일 10시, 11시, 14시, 15시, 16시)</p> 
                         <p><strong>출발장소</strong></p>
-                        티켓 별도 구입 후 경기전 안 출발지 표시판 
+                        	티켓 별도 구입 후 경기전 안 출발지 표시판 
                         <p><strong>주요코스</strong></p>
                         <p>홍살문 > 외삼문 > 내삼문 > 진전(태조어진) > 전주사고 > 예종대왕 태실 및 비
                         </p>
                     </div>
+                    
                     <div id="tab02">
 						<h2 class="tourtitle">향교 선비길 투어</h2>
                         <br>
@@ -107,8 +120,8 @@ td:first-child { background-color: #ffe0d8;}
                         <p><strong>주요코스</strong></p>
                         <p>오목대 관광안내소 > 당산나무 > 양사재 > 전통문화연수원(장현식고택) > 전주향교 > 향교길 > 남천교 청연루
                         </p>
-                        
 					</div>
+					
                     <div id="tab03">
                     	<h2 class="tourtitle">태조 이성계 로드 투어</h2>
                         <br>
@@ -122,6 +135,7 @@ td:first-child { background-color: #ffe0d8;}
                         <p>오목대 관광안내소 > 태조로쉼터 다음 오목대 > 자만벽화마을 > 이목대 > 최담 유허비 > 한벽당
                         </p>
                     </div>
+                    
                     <div id="tab04">
                     	<h2 class="tourtitle">한옥마을 골목길 투어</h2>
                         <br>
@@ -135,6 +149,7 @@ td:first-child { background-color: #ffe0d8;}
                         <p>전동성당 > 태조로 > 부채문화관&최명희문학관 > 은행로 > 600년 은행나무 > 승광재 > 한지길 > 전통한지원 > 오목대 관광안내소
                         </p>
                     </div>
+                    
                     <div id="tab05">
                     	<h2 class="tourtitle">전라감영 정기해설투어</h2>
                         <br>
@@ -234,7 +249,7 @@ td:first-child { background-color: #ffe0d8;}
         </div>
 
     </div>
-  
+ </div>
 <%@ include file="/footer.jsp" %>
 </body>
 </html>

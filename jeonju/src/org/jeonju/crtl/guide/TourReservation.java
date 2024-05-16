@@ -1,6 +1,7 @@
 package org.jeonju.crtl.guide;
 
 import java.io.IOException;
+import java.util.List;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -10,8 +11,9 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import org.jeonju.dao.TourDAO;
-import org.jeonju.dto.tour.TBought;
+import org.jeonju.dao.GuideDAO;
+import org.jeonju.dto.guide.TBought;
+import org.jeonju.dto.guide.Tourism;
 
 /**
  * Servlet implementation class TourInsert
@@ -38,7 +40,21 @@ public class TourReservation extends HttpServlet {
 		
 		//로그오프 시 로그인 화면으로 리다이렉트;
 		HttpSession session = request.getSession();
-		/* if(session.getAttribute("sid") == null) response.sendRedirect("/login"); */
+		
+		/*
+		 * if(session.getAttribute("sid") == null) {
+		 * response.sendRedirect("/jeonju/login"); return; }
+		 */
+		
+		
+		int c_id = Integer.parseInt(request.getParameter("c_id"));
+		System.out.println(c_id);
+		GuideDAO gd = new GuideDAO();
+		//투어 객체 하나 전달
+		List<Tourism> tourismFromCidList = gd.getTourismsFromCid(c_id);
+		System.out.println(tourismFromCidList);
+		request.setAttribute("tourismFromCidList", tourismFromCidList);
+		
 		
 		
 		RequestDispatcher view = request.getRequestDispatcher("/guide/tourReservation.jsp");
@@ -68,7 +84,7 @@ public class TourReservation extends HttpServlet {
 							  		  user_no, 
 							  		  t_no);
 		
-		TourDAO td = new TourDAO();
+		GuideDAO td = new GuideDAO();
 		cnt = td.insertTbought(tbought);
 		
 		if(cnt > 0) {

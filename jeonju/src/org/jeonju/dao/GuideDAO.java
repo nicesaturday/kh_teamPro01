@@ -6,10 +6,10 @@ import java.sql.ResultSet;
 import java.util.ArrayList;
 import java.util.List;
 
-import org.jeonju.dto.tour.TBought;
-import org.jeonju.dto.tour.Tourism;
+import org.jeonju.dto.guide.TBought;
+import org.jeonju.dto.guide.Tourism;
 
-public class TourDAO {
+public class GuideDAO {
 	Connection con = null;
 	PreparedStatement pstmt = null;
 	ResultSet rs = null;
@@ -23,12 +23,14 @@ public class TourDAO {
 			rs = pstmt.executeQuery();
 			while(rs.next()) {
 				Tourism tourism = new Tourism(rs.getInt("no"),
+						  		  rs.getInt("c_id"),
 								  rs.getString("name"),
 						          rs.getString("start_locate"),
 						          rs.getString("lang"),
 						          rs.getString("course"),
 						          rs.getInt("max_headcount"),
-						          rs.getInt("need_time"));
+						          rs.getInt("need_time"),
+						          rs.getInt("when_time"));
 				
 				tourismList.add(tourism);
 			}
@@ -39,6 +41,62 @@ public class TourDAO {
 		}
 		
 		return tourismList;
+	}
+	
+	
+	public List<Tourism> getTourismsFromCid(int c_id) {
+		List<Tourism> tourismList = new ArrayList<Tourism>();
+		try {
+			con = db.connect();
+			pstmt = con.prepareStatement(SqlLang.GETTOURISMSFEOMCIDLIST);
+			pstmt.setInt(1, c_id);
+			rs = pstmt.executeQuery();
+			while(rs.next()) {
+			  Tourism tourism = new Tourism(rs.getInt("no"),
+				  		  rs.getInt("c_id"),
+						  rs.getString("name"),
+				          rs.getString("start_locate"),
+				          rs.getString("lang"),
+				          rs.getString("course"),
+				          rs.getInt("max_headcount"),
+				          rs.getInt("need_time"),
+				          rs.getInt("when_time"));
+				
+			  tourismList.add(tourism);
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			db.close(con, pstmt, rs);
+		}
+		return tourismList;
+	}
+	
+	
+	public Tourism getTourismOne(int no) {
+		Tourism tourism = null;
+		try {
+			con = db.connect();
+			pstmt = con.prepareStatement(SqlLang.GETTOURISMONE);
+			pstmt.setInt(1, no);
+			rs = pstmt.executeQuery();
+			if(rs.next()) {
+			  tourism = new Tourism(rs.getInt("no"),
+				  		  rs.getInt("c_id"),
+						  rs.getString("name"),
+				          rs.getString("start_locate"),
+				          rs.getString("lang"),
+				          rs.getString("course"),
+				          rs.getInt("max_headcount"),
+				          rs.getInt("need_time"),
+				          rs.getInt("when_time"));
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			db.close(con, pstmt, rs);
+		}
+		return tourism;
 	}
 	
 	public List<TBought> getTBoughtList(int no) {

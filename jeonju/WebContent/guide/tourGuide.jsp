@@ -80,7 +80,7 @@ td:first-child { background-color: #ffe0d8;}
             <nav class="tab">
                 <ul class="tabnav">
                 	<c:forEach begin="1" end="6" varStatus="status" >
-                		<li><a href="#tab0${ status.count}">코스${ status.count}</a></li>
+                		<li><a id="" onClick="tourClick(${status.count })" href="#tab0${ status.count}">코스${ status.count}</a></li>
                 	</c:forEach>
                 </ul>
                 <div class="tabcontent">
@@ -172,7 +172,7 @@ td:first-child { background-color: #ffe0d8;}
         </div>
 
         <div class="button_wrap">
-            <div class="button"><a href="${ hpath}/tour_reservation">투어 예약하기</a></div>
+            <div class="button"><a href="${ hpath}/tour_reservation?c_id=1">투어 예약하기</a></div>
         </div>
 
         <script>
@@ -185,6 +185,9 @@ td:first-child { background-color: #ffe0d8;}
                     return false;
                 }).filter(':eq(0)').click();
                 });
+            function tourClick(e) {
+            	$('.button_wrap a').attr("href","${ hpath}/tour_reservation?c_id="+e);
+            }
         </script>
 
         <div class="timetable">

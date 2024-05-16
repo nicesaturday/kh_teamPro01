@@ -265,6 +265,7 @@ document.getElementById('modal-close').addEventListener("click", function(e){
 	        button.style.visibility = "visible";
 	    });
 	}, 500);
+	//레이아웃 검은화면 이벤트 꺼주기
    document.getElementById('modal-container').style.pointerEvents = "none";
    document.getElementById('popup').style.height = "0";
    document.getElementById('popup_item').style.height = "0";
@@ -272,7 +273,7 @@ document.getElementById('modal-close').addEventListener("click", function(e){
    document.getElementById('modal-container').addEventListener('transitionend', function(e){
        this.classList.toggle('unstaged');
        this.removeEventListener('transitionend',arguments.callee);
-   //레이아웃이 꺼질때, 이벤트를 막아서 검은화면만 남는 것을
+   //리아아웃 검은화면 이벤트 다시 켜주기 (연속적으로 눌러지는 현상 방지)
    setTimeout(function() {document.getElementById('modal-container').style.pointerEvents = "auto";},1000);
 });
 });

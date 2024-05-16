@@ -1,3 +1,6 @@
+<%@page import="org.json.simple.JSONObject"%>
+<%@page import="org.jeonju.dto.guide.Tourism"%>
+<%@page import="java.util.List"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -64,37 +67,39 @@
 	                <li>
 	                    <div><label for="course">희망코스</label></div>
 	                    <div>
-	                        <select name="course" id="course">
-	                        <option value="default">코스를 선택해주세요</option>
-	                        <option value="course1">코스1</option>
-	                        <option value="course2">코스2</option>
-	                        <option value="course3">코스3</option>
-	                        <option value="course4">코스4</option>
-	                        <option value="course5">코스5</option>
-	                        <option value="course6">코스6</option>
+	                        <select name="course" id="course" readonly>
+	                        <option value="0" disabled="disabled"  selected>${ tourismFromCidList.get(0).getName()}</option>
 	                        </select>
 	                    </div>
 	                </li>
 	                <li>
 	                    <div><label for="time">투어 시간</label></div>
-	                    <div><select name="time" id="time">
-	                        <option value="default">시간을 선택해주세요</option>
-	                        <option value="11:00">10:00</option>
-	                        <option value="13:00">11:00</option>
-	                        <option value="14:00">14:00</option>
-	                        <option value="15:00">15:00</option>
-	                        <option value="15:00">16:00</option>
-	                    </select></div>
+	                    <div>
+	                     <select name="time" id="" onchange="onTimeChanged(this)">
+	                        <option value="default" disabled="disabled" selected>시간을 선택해주세요</option>
+	                        <!-- 수용가능 인원수가 0이되면 disabled -->
+	                        <c:forEach var="item" items="${ tourismFromCidList}">
+	                         	<c:choose>
+	                         		<c:when test="${ item.getMax_headcount() eq 0  }">
+	                         			<option value="${ item.getWhen_time()}" disabled="disabled">${ item.getWhen_time()}:00</option>
+	                         		</c:when>
+	                         		<c:otherwise>
+	                         			<option value="${ item.getWhen_time()}">${ item.getWhen_time()}:00</option>
+	                         		</c:otherwise>
+	                         	</c:choose>
+	                        </c:forEach>
+	                     </select>
+	                    </div>
 	                </li>
 	                <li>
 	                    <div><label for="people">인원</label></div>
 	                    <div>
-	                        <select name="people" id="people">
-	                            <option value="default">인원을 선택해주세요. (최대 4명)</option>
-	                            <option value="1">1명</option>
-	                            <option value="2">2명</option>
-	                            <option value="3">3명</option>
-	                            <option value="4">4명</option>
+	                        <select name="people" id="people" >
+	                            <option value="default" disabled="disabled" selected >인원을 선택해주세요. (최대 4명)</option>
+	                            <option value="1" >1명</option>
+	                            <option value="2" >2명</option>
+	                            <option value="3" >3명</option>
+	                            <option value="4" >4명</option>
 	                        </select>
 	                    </div>               
 	                </li>
@@ -104,11 +109,23 @@
 				    <button type="submit" class="button" id="enter">예약하기 <span class="simple-line-icons--arrow-right2"></span></button>
 				</div>
 	       </form>
-	     </div>
-	        
+	     </div>       
 </div>
-
-    
+<script>
+	function onTimeChanged(e) {
+		var when_time = $(e).val();
+		
+		<% 
+		  List<Tourism> tourrismList = (List<Tourism>) request.getAttribute("tourismFromCidList");
+		  JSONObject jsonObject = new JSONObject();
+		  
+		  
+		 /*  이제 리트스를 배열로 만들어서  <%= 해야됌 */
+		%>
+		
+		
+	}
+</script>
 <%@ include file="/footer.jsp" %>
 </body>
 </html>

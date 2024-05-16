@@ -9,7 +9,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import org.jeonju.dao.travel.FestivalDAO;
+import org.jeonju.dao.tour.FestivalDAO;
 import org.jeonju.dto.travel.Festival;
 import org.json.simple.JSONObject;
 
@@ -39,7 +39,7 @@ public class FestivalOneApi extends HttpServlet {
 		
 		int no = Integer.parseInt(request.getParameter("no"));
 		
-		System.out.println(no);
+		
 		FestivalDAO fd = new FestivalDAO();
 		Festival festival = fd.getFestivalOne(no);
 		

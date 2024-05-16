@@ -10,7 +10,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import org.jeonju.dao.TourDAO;
+import org.jeonju.dao.GuideDAO;
 
 /**
  * Servlet implementation class MyTBought
@@ -39,7 +39,7 @@ public class TourReservationList extends HttpServlet {
 		int no = Integer.parseInt((String)session.getAttribute("no"));
 		
 		
-		TourDAO td = new TourDAO();
+		GuideDAO td = new GuideDAO();
 		request.setAttribute("tboughtList", td.getTBoughtList(no));
 		
 		RequestDispatcher view = request.getRequestDispatcher("/user/t_bought.jsp");

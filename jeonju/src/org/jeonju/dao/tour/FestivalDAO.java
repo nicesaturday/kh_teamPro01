@@ -1,4 +1,4 @@
-package org.jeonju.dao.travel;
+package org.jeonju.dao.tour;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;

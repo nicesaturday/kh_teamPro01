@@ -23,6 +23,8 @@ public interface SqlLang {
 	
 	//tour sql
 	final static String GETTOURISMLIST = "select * from tourism";
+	final static String GETTOURISMONE = "select * from tourism where no = ?";
+	final static String GETTOURISMSFEOMCIDLIST = "select * from tourism where c_id = ?";
 	final static String GETTBOUGHTLIST = "select * from t_bought where user_no = ?";
 	final static String INSERTTBOUGHT = "insert into t_bought values(default , ? , default , ? , ? , ?)";
 	final static String UPDATETBOUGHT = "update t_bought set start_time = ? , headcount = ? where no = ? ";

@@ -61,8 +61,31 @@ create table user(no int auto_increment primary key, id varchar(500) not null un
    delete from user where no = 2;
    
    drop table tourism;
-create table tourism(no int auto_increment primary key, name varchar(500) not null , start_locate varchar(500) not null , lang varchar(1000) , course varchar(2000) , max_headcount int default 20 , need_time int default 1); 
+create table tourism(no int auto_increment primary key, c_id int not null ,name varchar(500) not null , start_locate varchar(500) not null , lang varchar(1000) , course varchar(2000) , max_headcount int default 20 , need_time int default 1 , when_time int not null); 
+
+-- 1
+insert into tourism values(default , 1 ,'경기전 역사투어' , '티켓 별도 구입 후 경기전 안 출발지 표시판' , '한·영·중·일 (매일 11시, 14시) / 한국어 (매일 10시, 11시, 14시, 15시, 16시)'  , '홍살문 > 외삼문 > 내삼문 > 진전(태조어진) > 전주사고 > 예종대왕 태실 및 비' , 20 , 1 , 10);
+insert into tourism values(default , 1 ,'경기전 역사투어' , '티켓 별도 구입 후 경기전 안 출발지 표시판' , '한·영·중·일 (매일 11시, 14시) / 한국어 (매일 10시, 11시, 14시, 15시, 16시)'  , '홍살문 > 외삼문 > 내삼문 > 진전(태조어진) > 전주사고 > 예종대왕 태실 및 비' , 20 , 1 , 11);
+insert into tourism values(default , 1 ,'경기전 역사투어' , '티켓 별도 구입 후 경기전 안 출발지 표시판' , '한·영·중·일 (매일 11시, 14시) / 한국어 (매일 10시, 11시, 14시, 15시, 16시)'  , '홍살문 > 외삼문 > 내삼문 > 진전(태조어진) > 전주사고 > 예종대왕 태실 및 비' , 20 , 1 , 14);
+insert into tourism values(default , 1 ,'경기전 역사투어' , '티켓 별도 구입 후 경기전 안 출발지 표시판' , '한·영·중·일 (매일 11시, 14시) / 한국어 (매일 10시, 11시, 14시, 15시, 16시)'  , '홍살문 > 외삼문 > 내삼문 > 진전(태조어진) > 전주사고 > 예종대왕 태실 및 비' , 20 , 1 , 15);
+insert into tourism values(default , 1 ,'경기전 역사투어' , '티켓 별도 구입 후 경기전 안 출발지 표시판' , '한·영·중·일 (매일 11시, 14시) / 한국어 (매일 10시, 11시, 14시, 15시, 16시)'  , '홍살문 > 외삼문 > 내삼문 > 진전(태조어진) > 전주사고 > 예종대왕 태실 및 비' , 20 , 1 , 16);
+
+insert into tourism values(default , 2 ,'향교 선비길 투어' , '오목대 관광안내소 옆 출발지 표시판' , '한국어 (매일 10시)'  , '오목대 관광안내소 > 당산나무 > 양사재 > 전통문화연수원(장현식고택) > 전주향교 > 향교길 > 남천교 청연루' , 20 , 1 , 10);
+
+insert into tourism values(default , 3 ,'태조 이성계 로드 투어' , '오목대 관광안내소 옆 출발지 표시판' , '한국어 (매일 14시)'  , '오목대 관광안내소 > 태조로쉼터 다음 오목대 > 자만벽화마을 > 이목대 > 최담 유허비 > 한벽당' , 20 , 1 , 14);
+
+insert into tourism values(default , 4 ,'한옥마을 골목길 투어' , '경기전 관광안내소 앞 출발지 표시판' , '한·영·중·일 (매일 15시), 한·영(매일 11시, 15시)'  , '전동성당 > 태조로 > 부채문화관&최명희문학관 > 은행로 > 600년 은행나무 > 승광재 > 한지길 > 전통한지원 > 오목대 관광안내소' , 20 , 1 , 11);
+insert into tourism values(default , 4 ,'한옥마을 골목길 투어' , '경기전 관광안내소 앞 출발지 표시판' , '한·영·중·일 (매일 15시), 한·영(매일 11시, 15시)'  , '전동성당 > 태조로 > 부채문화관&최명희문학관 > 은행로 > 600년 은행나무 > 승광재 > 한지길 > 전통한지원 > 오목대 관광안내소' , 20 , 1 , 15);
+
+insert into tourism values(default , 5 ,'전라감영 정기해설투어' , '전라감영 정문 앞 출발지 표시판' , '한·영 (매일 11시, 14시) / 한국어 (매일 11시, 14시, 16시)'  , '내삼문 > 선화당 > 내아 행랑채 > 내아 > 연신당 > 관풍각' , 20 , 1 , 11);
+insert into tourism values(default , 5 ,'전라감영 정기해설투어' , '전라감영 정문 앞 출발지 표시판' , '한·영 (매일 11시, 14시) / 한국어 (매일 11시, 14시, 16시)'  , '내삼문 > 선화당 > 내아 행랑채 > 내아 > 연신당 > 관풍각' , 20 , 1 , 14);
+insert into tourism values(default , 5 ,'전라감영 정기해설투어' , '전라감영 정문 앞 출발지 표시판' , '한·영 (매일 11시, 14시) / 한국어 (매일 11시, 14시, 16시)'  , '내삼문 > 선화당 > 내아 행랑채 > 내아 > 연신당 > 관풍각' , 20 , 1 , 16);
+
+insert into tourism values(default , 6 ,'전주부성 옛길투어 1코스' , '풍남문 (전라감영 방향 풍남문 출발지 표시판)' , '한국어 (매일 10시 , 15시)'  , '풍남문 > 고물자 골목 > 공익질옥 > 수다작 > 미래유산 행원 > 유기방 > 필방 > 고미술거리 > 완산경찰서 > 전라감영' , 20 , 1 , 10);
+insert into tourism values(default , 6 ,'전주부성 옛길투어 1코스' , '풍남문 (전라감영 방향 풍남문 출발지 표시판)' , '한국어 (매일 10시 , 15시)'  , '풍남문 > 고물자 골목 > 공익질옥 > 수다작 > 미래유산 행원 > 유기방 > 필방 > 고미술거리 > 완산경찰서 > 전라감영' , 20 , 1 , 15);
+
   desc tourism;
+  select * from tourism;
    
   
   drop table t_bought;

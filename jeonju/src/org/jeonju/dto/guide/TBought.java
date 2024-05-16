@@ -1,4 +1,4 @@
-package org.jeonju.dto.tour;
+package org.jeonju.dto.guide;
 
 public class TBought {
 	private int no;

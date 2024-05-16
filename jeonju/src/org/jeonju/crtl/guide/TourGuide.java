@@ -11,8 +11,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import org.jeonju.dao.TourDAO;
-import org.jeonju.dto.tour.Tourism;
+import org.jeonju.dao.GuideDAO;
+import org.jeonju.dto.guide.Tourism;
 
 /**
  * Servlet implementation class TourList
@@ -39,7 +39,7 @@ public class TourGuide extends HttpServlet {
 		
 		List<Tourism> tourismList = new ArrayList<Tourism>();
 		
-		TourDAO td = new TourDAO();
+		GuideDAO td = new GuideDAO();
 		
 		tourismList = td.getTourismList();
 		

@@ -45,7 +45,7 @@ public class TourGuide extends HttpServlet {
 		
 		request.setAttribute("tourismList", tourismList);
 		
-		RequestDispatcher view = request.getRequestDispatcher("/tour/tourGuide.jsp");
+		RequestDispatcher view = request.getRequestDispatcher("/guide/tourGuide.jsp");
 		view.forward(request, response);
 		
 	}

@@ -59,7 +59,7 @@ td:first-child { background-color: #ffe0d8;}
     <div class="page_head">
       
             <p>해설과 함께하는<br>전주 도보 예약 투어</p>
-            <div class="imgwrap"><img src="${ hpath}/img/tour/dongosanseong.png" alt="관광가이드 예약"></div>
+            <div class="imgwrap"><img src="${ hpath}/img/guide/dongosanseong.png" alt="관광가이드 예약"></div>
     </div>
         
     <div class="contents1">
@@ -82,14 +82,6 @@ td:first-child { background-color: #ffe0d8;}
                 	<c:forEach begin="1" end="6" varStatus="status" >
                 		<li><a href="#tab0${ status.count}">코스${ status.count}</a></li>
                 	</c:forEach>
-                	
-                    <!-- <li><a href="#tab01">코스1</a></li>
-                    <li><a href="#tab02">코스2</a></li>
-                    <li><a href="#tab03">코스3</a></li>
-                    <li><a href="#tab04">코스4</a></li>
-                    <li><a href="#tab05">코스5</a></li>
-                    <li><a href="#tab06">코스6</a></li> -->
-                    
                 </ul>
                 <div class="tabcontent">
                 
@@ -180,7 +172,7 @@ td:first-child { background-color: #ffe0d8;}
         </div>
 
         <div class="button_wrap">
-            <div class="button"><a href="${ hpath}/guide/tour_reservation.jsp">투어 예약하기</a></div>
+            <div class="button"><a href="${ hpath}/tour_reservation">투어 예약하기</a></div>
         </div>
 
         <script>

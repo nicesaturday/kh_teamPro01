@@ -62,28 +62,35 @@ public class Login extends HttpServlet {
 		UserDAO ud = new UserDAO();
 		User user = ud.getUserOne(id);
 		
-		//없는 경우 에러 메세지 렌더
-		if(user == null) {
-			//에러 메세지 view 렌더 (아이디 존재 x);
-		}
-		try {
-			pw_exist = AES256.decryptAES256(user.getPw(), key);
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
 		
-		//비밀번호 일치시 렌더
-		if(pw.equals(pw_exist)) {
-			session.setAttribute("no", user.getNo());
-			session.setAttribute("id", user.getId());
-			session.setAttribute("name", user.getName());
-			session.setAttribute("email", user.getEmail());
-			session.setAttribute("phone_num", user.getPhone_num());
-			session.setAttribute("address", user.getAddress());
-			session.setAttribute("resdate", user.getResdate());
+		RequestDispatcher view = request.getRequestDispatcher("/user/login.jsp");
+		
+		
+		
+		//아이디 , 비밀번호 일치시 렌더
+		if(user != null) {
+			try {
+				pw_exist = AES256.decryptAES256(user.getPw(), key);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+			if(!pw.equals(pw_exist)) {
+				request.setAttribute("errorPw", "PASSWORD 불일치");
+				view.forward(request, response);
+				return;
+			}
+			session.setAttribute("sno", user.getNo());
+			session.setAttribute("sid", user.getId());
+			session.setAttribute("sname", user.getName());
+			session.setAttribute("semail", user.getEmail());
+			session.setAttribute("sphone_num", user.getPhone_num());
+			session.setAttribute("saddress", user.getAddress());
+			session.setAttribute("sresdate", user.getResdate());
 			response.sendRedirect("/");
-		} else {
-			//에러 메세지 view 렌더(비밀번호 일치 x);
+		}
+		else {
+			request.setAttribute("errorId", "ID를 찾을 수가 없습니다.");
+			view.forward(request, response);
 		}
 		
 		

@@ -23,7 +23,7 @@
 
     <style>
     
-    	a {
+    	#option_switch a {
     		color: white;
     	}
         #top_wrap {

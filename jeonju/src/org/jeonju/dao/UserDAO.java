@@ -31,7 +31,7 @@ public class UserDAO {
 						        rs.getString("pw"), 
 						        rs.getString("email"), 
 						        rs.getString("phone_num"), 
-						        rs.getString("adress"),
+						        rs.getString("address"),
 						        rs.getString("resdate"));
 			}
 		} catch (Exception e) {

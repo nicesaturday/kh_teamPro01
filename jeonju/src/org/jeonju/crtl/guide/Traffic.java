@@ -32,7 +32,7 @@ public class Traffic extends HttpServlet {
 		response.setCharacterEncoding("UTF-8");
 		response.setContentType("text/html; charset=UTF-8");
 		
-		RequestDispatcher view = request.getRequestDispatcher("/tour/traffic.jsp");
+		RequestDispatcher view = request.getRequestDispatcher("/guide/traffic.jsp");
 		view.forward(request, response);
 	}
 

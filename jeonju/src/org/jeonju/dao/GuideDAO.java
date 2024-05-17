@@ -135,23 +135,13 @@ public class GuideDAO {
 			pstmt.setInt(3, tbought.getUser_no());
 			pstmt.setInt(4, tbought.getT_no());
 			cnt = pstmt.executeUpdate();
-		} catch (Exception e) {
-			e.printStackTrace();
-		} finally {
-			db.close(con, pstmt);
-		}
-		
-		return cnt;
-	}
-	
-	public int updateTbought(TBought tbought) {
-		int cnt = 0;
-		try {
-			con = db.connect();
-			pstmt = con.prepareStatement(SqlLang.INSERTTBOUGHT);
-			pstmt.setString(1, tbought.getStart_time());
-			pstmt.setInt(2, tbought.getHeadcount());
-			pstmt.setInt(3, tbought.getNo());
+			
+			pstmt = null;
+			
+			pstmt = con.prepareStatement(SqlLang.UPDATEMAXHEADCOUNT);
+			pstmt.setInt(1, tbought.getHeadcount());
+			pstmt.setInt(2, tbought.getT_no());
+			
 			cnt = pstmt.executeUpdate();
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -161,6 +151,8 @@ public class GuideDAO {
 		
 		return cnt;
 	}
+	
+
 	
 	public int deleteTbought(int no) {
 		int cnt = 0;

@@ -3,22 +3,20 @@ package org.jeonju.dto;
 public class User {
 	private int no;
 	private String id;
-	private String email;
 	private String name;
 	private String pw;
+	private String email;
 	private String phone_num;
 	private String address;
 	private String resdate;
-	
-	public User() {}
-	public User(int no, String id, String email, String name, String pw, String phone_num, String address,
+	public User(int no, String id, String name, String pw, String email, String phone_num, String address,
 			String resdate) {
 		super();
 		this.no = no;
 		this.id = id;
-		this.email = email;
 		this.name = name;
 		this.pw = pw;
+		this.email = email;
 		this.phone_num = phone_num;
 		this.address = address;
 		this.resdate = resdate;
@@ -35,12 +33,6 @@ public class User {
 	public void setId(String id) {
 		this.id = id;
 	}
-	public String getEmail() {
-		return email;
-	}
-	public void setEmail(String email) {
-		this.email = email;
-	}
 	public String getName() {
 		return name;
 	}
@@ -52,6 +44,12 @@ public class User {
 	}
 	public void setPw(String pw) {
 		this.pw = pw;
+	}
+	public String getEmail() {
+		return email;
+	}
+	public void setEmail(String email) {
+		this.email = email;
 	}
 	public String getPhone_num() {
 		return phone_num;
@@ -73,9 +71,10 @@ public class User {
 	}
 	@Override
 	public String toString() {
-		return "User [no=" + no + ", id=" + id + ", email=" + email + ", name=" + name + ", pw=" + pw + ", phone_num="
+		return "User [no=" + no + ", id=" + id + ", name=" + name + ", pw=" + pw + ", email=" + email + ", phone_num="
 				+ phone_num + ", address=" + address + ", resdate=" + resdate + "]";
 	}
+	
 	
 	
 	

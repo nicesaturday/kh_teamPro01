@@ -63,10 +63,9 @@ public class Login extends HttpServlet {
 		User user = ud.getUserOne(id);
 		
 		
-		RequestDispatcher view = request.getRequestDispatcher("/user/login.jsp");
 		
 		
-		
+
 		//아이디 , 비밀번호 일치시 렌더
 		if(user != null) {
 			try {
@@ -75,6 +74,7 @@ public class Login extends HttpServlet {
 				e.printStackTrace();
 			}
 			if(!pw.equals(pw_exist)) {
+				RequestDispatcher view = request.getRequestDispatcher("/user/login.jsp");
 				request.setAttribute("errorPw", "PASSWORD 불일치");
 				view.forward(request, response);
 				return;
@@ -86,10 +86,11 @@ public class Login extends HttpServlet {
 			session.setAttribute("sphone_num", user.getPhone_num());
 			session.setAttribute("saddress", user.getAddress());
 			session.setAttribute("sresdate", user.getResdate());
-			response.sendRedirect("/");
+			response.sendRedirect("/jeonju");
 		}
 		else {
 			request.setAttribute("errorId", "ID를 찾을 수가 없습니다.");
+			RequestDispatcher view = request.getRequestDispatcher("/user/login.jsp");
 			view.forward(request, response);
 		}
 		

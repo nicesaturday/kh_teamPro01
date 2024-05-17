@@ -64,11 +64,14 @@ create table user(no int auto_increment primary key, id varchar(500) not null un
 create table tourism(no int auto_increment primary key, c_id int not null ,name varchar(500) not null , start_locate varchar(500) not null , lang varchar(1000) , course varchar(2000) , max_headcount int default 20 , need_time int default 1 , when_time int not null); 
 
 -- 1
-insert into tourism values(default , 1 ,'경기전 역사투어' , '티켓 별도 구입 후 경기전 안 출발지 표시판' , '한·영·중·일 (매일 11시, 14시) / 한국어 (매일 10시, 11시, 14시, 15시, 16시)'  , '홍살문 > 외삼문 > 내삼문 > 진전(태조어진) > 전주사고 > 예종대왕 태실 및 비' , 20 , 1 , 10);
+insert into tourism values(default , 1 ,'경기전 역사투어' , '티켓 별도 구입 후 경기전 안 출발지 표시판' , '한·영·중·일 (매일 11시, 14시) / 한국어 (매일 10시, 11시, 14시, 15시, 16시)'  , '홍살문 > 외삼문 > 내삼문 > 진전(태조어진) > 전주사고 > 예종대왕 태실 및 비' , 3 , 1 , 10);
 insert into tourism values(default , 1 ,'경기전 역사투어' , '티켓 별도 구입 후 경기전 안 출발지 표시판' , '한·영·중·일 (매일 11시, 14시) / 한국어 (매일 10시, 11시, 14시, 15시, 16시)'  , '홍살문 > 외삼문 > 내삼문 > 진전(태조어진) > 전주사고 > 예종대왕 태실 및 비' , 20 , 1 , 11);
 insert into tourism values(default , 1 ,'경기전 역사투어' , '티켓 별도 구입 후 경기전 안 출발지 표시판' , '한·영·중·일 (매일 11시, 14시) / 한국어 (매일 10시, 11시, 14시, 15시, 16시)'  , '홍살문 > 외삼문 > 내삼문 > 진전(태조어진) > 전주사고 > 예종대왕 태실 및 비' , 20 , 1 , 14);
 insert into tourism values(default , 1 ,'경기전 역사투어' , '티켓 별도 구입 후 경기전 안 출발지 표시판' , '한·영·중·일 (매일 11시, 14시) / 한국어 (매일 10시, 11시, 14시, 15시, 16시)'  , '홍살문 > 외삼문 > 내삼문 > 진전(태조어진) > 전주사고 > 예종대왕 태실 및 비' , 20 , 1 , 15);
 insert into tourism values(default , 1 ,'경기전 역사투어' , '티켓 별도 구입 후 경기전 안 출발지 표시판' , '한·영·중·일 (매일 11시, 14시) / 한국어 (매일 10시, 11시, 14시, 15시, 16시)'  , '홍살문 > 외삼문 > 내삼문 > 진전(태조어진) > 전주사고 > 예종대왕 태실 및 비' , 20 , 1 , 16);
+
+update tourism set max_headcount = 3 where no = 1;
+update tourism set max_headcount = 2 where no = 2;
 
 insert into tourism values(default , 2 ,'향교 선비길 투어' , '오목대 관광안내소 옆 출발지 표시판' , '한국어 (매일 10시)'  , '오목대 관광안내소 > 당산나무 > 양사재 > 전통문화연수원(장현식고택) > 전주향교 > 향교길 > 남천교 청연루' , 20 , 1 , 10);
 
@@ -91,6 +94,8 @@ insert into tourism values(default , 6 ,'전주부성 옛길투어 1코스' , '�
   drop table t_bought;
 create table t_bought(no int auto_increment primary key , start_time varchar(100) not null, resdate datetime default now() ,headcount int not null , user_no int not null , t_no int not null , foreign key (user_no) references user(no) on delete cascade on update cascade ,foreign key (t_no) references tourism(no) on delete cascade on update cascade);
   desc t_bought;
+  delete from t_bought where no = 4;
+  select * from t_bought;
 
   
   

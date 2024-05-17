@@ -1,3 +1,5 @@
+<%@page import="org.json.simple.JSONArray"%>
+<%@page import="java.io.PrintWriter"%>
 <%@page import="org.json.simple.JSONObject"%>
 <%@page import="org.jeonju.dto.guide.Tourism"%>
 <%@page import="java.util.List"%>
@@ -55,10 +57,11 @@
 	                <li>
 	                    <div><label for="name"> 이름</label></div>
 	                    <div><input type="text" name="name" id="name" readonly value=${sname } ></div>
+	                    <div><input type="password" name="user_no" id="user_no" hidden="hidden" readonly value=${sno } ></div>
 	                </li>
 	                <li>
 	                    <div><label for="phoneNumber"> 연락처</label></div>
-	                    <div><input type="text" name="phoneNumber" id="phoneNumber" readonly value=${sphone_number } ></div>
+	                    <div><input type="text" name="phoneNumber" id="phoneNumber" readonly value=${sphone_num } ></div>
 	                </li>
 	                <li>
 	                    <div><label for="email"> 이메일</label></div>
@@ -67,24 +70,24 @@
 	                <li>
 	                    <div><label for="course">희망코스</label></div>
 	                    <div>
-	                        <select name="course" id="course" readonly>
-	                        <option value="0" disabled="disabled"  selected>${ tourismFromCidList.get(0).getName()}</option>
+	                        <select name="t_no" id="course">
+	                          <option value=""   selected>${ tourismFromCidList.get(0).getName()}</option>
 	                        </select>
 	                    </div>
 	                </li>
 	                <li>
 	                    <div><label for="time">투어 시간</label></div>
 	                    <div>
-	                     <select name="time" id="" onchange="onTimeChanged(this)">
-	                        <option value="default" disabled="disabled" selected>시간을 선택해주세요</option>
+	                     <select name="start_time" id="time" onchange="onTimeChanged(this)" required="required">
+	                        <option value="" disabled="disabled" selected>시간을 선택해주세요</option>
 	                        <!-- 수용가능 인원수가 0이되면 disabled -->
 	                        <c:forEach var="item" items="${ tourismFromCidList}">
 	                         	<c:choose>
 	                         		<c:when test="${ item.getMax_headcount() eq 0  }">
-	                         			<option value="${ item.getWhen_time()}" disabled="disabled">${ item.getWhen_time()}:00</option>
+	                         			<option value="" disabled="disabled">${ item.getWhen_time()}:00(마감)</option>
 	                         		</c:when>
 	                         		<c:otherwise>
-	                         			<option value="${ item.getWhen_time()}">${ item.getWhen_time()}:00</option>
+	                         			<option value=${ item.getWhen_time()}>${ item.getWhen_time()}:00</option>
 	                         		</c:otherwise>
 	                         	</c:choose>
 	                        </c:forEach>
@@ -94,12 +97,8 @@
 	                <li>
 	                    <div><label for="people">인원</label></div>
 	                    <div>
-	                        <select name="people" id="people" >
-	                            <option value="default" disabled="disabled" selected >인원을 선택해주세요. (최대 4명)</option>
-	                            <option value="1" >1명</option>
-	                            <option value="2" >2명</option>
-	                            <option value="3" >3명</option>
-	                            <option value="4" >4명</option>
+	                        <select name="headcount" id="people" required="required">
+	                            <option value="" disabled="disabled" selected >인원을 선택해주세요. (최대 4명)</option>
 	                        </select>
 	                    </div>               
 	                </li>
@@ -115,14 +114,50 @@
 	function onTimeChanged(e) {
 		var when_time = $(e).val();
 		
-		<% 
-		  List<Tourism> tourrismList = (List<Tourism>) request.getAttribute("tourismFromCidList");
-		  JSONObject jsonObject = new JSONObject();
-		  
-		  
-		 /*  이제 리트스를 배열로 만들어서  <%= 해야됌 */
+		<%
+           List<Tourism> tourismList = (List<Tourism>) request.getAttribute("tourismFromCidList");
+           JSONArray jsonArray = new JSONArray();
+           for (Tourism tourism : tourismList) {
+               JSONObject jsonObject = new JSONObject();  //json 객체 생성  and 재 생성 
+               jsonObject.put("no", tourism.getNo());		
+               jsonObject.put("c_id", tourism.getC_id());
+               jsonObject.put("name", tourism.getName());
+               jsonObject.put("start_locate", tourism.getStart_locate());
+               jsonObject.put("lang", tourism.getLang());
+               jsonObject.put("course", tourism.getCourse());
+               jsonObject.put("max_headcount", tourism.getMax_headcount());
+               jsonObject.put("need_time", tourism.getNeed_time());
+               jsonObject.put("when_time", tourism.getWhen_time());
+               jsonArray.add(jsonObject);	//json array에 담기
+    	   }
+           String jsonText = jsonArray.toJSONString();
 		%>
+		//json형태로 java에서 js로 리스트 받기
+		var tourrismList = <%= jsonText%>;
+		//시간 대에 맞는 배열만 추출
+		var newTourrismList = tourrismList.filter(function(tourrism) {return tourrism.when_time == when_time});
+		$('select[name="headcount"]').empty(); 
+		$('select[name="headcount"]').append("<option disabled>예약 된 인원"+(20-newTourrismList[0].max_headcount)+"/20</option>");
+		var max = 0;
+		switch(newTourrismList[0].max_headcount) {
+		  case 3:
+		  case 2:
+		  case 1:
+		    max = newTourrismList[0].max_headcount;
+		    break;
+		  case 0:
+			$('select[name="headcount"]').append("<option>예약 불가</option>");
+			break;
+		  default:
+			max = 4;
+		}
 		
+		
+		for(var i = 1; i <= max; i++) {
+			var option = "<option value="+i+">"+i+"명</option>";
+			$('select[name="headcount"]').append(option);
+		}
+	    $('select[name="t_no"] option').attr("value",newTourrismList[0].no);
 		
 	}
 </script>

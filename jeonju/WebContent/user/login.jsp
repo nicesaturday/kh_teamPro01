@@ -281,7 +281,7 @@ input {
             		  <span>Password</span>
             		</c:otherwise>
             	</c:choose>
-                <input type="password" name="password" id="password" />
+                <input type="password" name="pw" id="password" />
             </label>
             <br><br><br>
             <button type="submit" class="submit">Log In</button>

@@ -73,15 +73,24 @@
             border-radius: 25px;
         }
         #top_wrap {
-            width: 1200px;
-            height: 50px;
-            margin-right: auto;
-            margin-left: auto;
+            width: 100%;
+            height: 30px;
+           	margin: 20px auto;
             text-align: center;
             font-size: 30px;
             font-weight: 700;
-            border-bottom: 2px solid #F24405;
             color: #F24405;
+        }
+        .breadcrumb { 
+            font-size: 0.9em; 
+            margin-bottom: 10px; 
+            color:rgb(134, 134, 134); 
+            text-align: center; 
+        }
+        #line {
+            width: 100%; 
+            height: 10px; 
+            border-bottom: 1px solid #F24405;
         }
         #main_wrap {
             width: 1200px;
@@ -154,6 +163,8 @@
         <div id="top_wrap">
             	대표축제
         </div>
+        <div class="breadcrumb">전주여행  > 대표축제</div>
+        <div id="line"></div>
         <div id="main_wrap">
         	<div id="grid_main">
         		<c:forEach var="item" items="${ festivalList}">

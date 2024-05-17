@@ -36,11 +36,21 @@
                    </ul>
                </li>
                <li class="item">
-                   <a href="" class="dp1">마이페이지</a>
+               <c:if test="${empty sname}" >
+                   <a href="${hpath }/login" class="dp1">마이페이지</a>
+               </c:if>
+               <c:if test="${not empty sname}" >
+                   <a href="${hpath }/mypage" class="dp1">마이페이지</a>
+               </c:if>
                    <ul class="submenu">
+                    <c:if test="${empty sname}" > 
                        <li><a href="${hpath }/login">로그인</a></li>
                        <li><a href="${hpath }/join_term">회원가입</a></li>
+                    </c:if>
+                    <c:if test="${not empty sname}" >
+                       <div><a href="${hpath }/logout">로그아웃</a></div>
                        <li><a href="${hpath }/">예약확인</a></li>
+                    </c:if>                           
                        <li><a href="${hpath }/term">이용약관</a></li>
                        <li><a href="${hpath }/term">개인정보 처리방침</a></li>
                    </ul>
@@ -55,10 +65,15 @@
            </ul>
        </nav>
        <div class="tnb">
-       
+        <c:if test="${empty sname}" > 
            <div><a href="${hpath }/login">로그인</a></div>
-           
-           
+        </c:if>
+        <c:if test="${not empty sname}" >
+           <div><a href="${hpath }/logout">로그아웃</a></div>   
+        </c:if>
+        
+        
+        
            <div><a href="" class="fe--bar"></a></div>
        </div>
    </div>

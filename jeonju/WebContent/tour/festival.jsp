@@ -29,11 +29,12 @@
         }
         #popup_item_img_wrap{
             width: 100%;
-            height: 20%;       
+            height: 20%;
+            overflow: hidden;     
         }
         #popup_item_img_wrap img {
             width: 100%;
-            height: 100%;
+            top: -300px;
             opacity: 0.7;
         }
         #popup_item_title_wrap {

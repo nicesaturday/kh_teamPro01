@@ -74,7 +74,8 @@
         
         
         
-           <div><a href="" class="fe--bar"></a></div>
+           <input style="display: none;" type="checkbox" id="sidemenu"  checked>
+	       <label style="margin: 0;" for="sidemenu" class="sideBtn" onclick=""><span class="fe--bar"><span></label>
        </div>
    </div>
 </header>
@@ -94,4 +95,27 @@
        
        document.querySelector('#hd_main_wrap').classList.remove('header-hover');
    });
+</script>
+<script>
+	const gnb2 = document.getElementById('gnb');
+	const sideMenuCheckbox = document.getElementById('sidemenu');
+	const backgroundbg = document.getElementById('hd_main_wrap');
+	
+	 // Add event listener for change event on the input checkbox
+	 sideMenuCheckbox.addEventListener('change', function() {
+	    
+	    // If the checkbox is checked, display the mobile menu; otherwise, hide it
+	    if (this.checked) {
+	        gnb2.style.display = 'block'
+	        backgroundbg.style.height = 'auto';
+	        
+	                        
+	    } else {
+	        
+	        gnb2.style.display= 'none';
+	        backgroundbg.style.height = '60px';
+	    }
+	    
+	});
+
 </script>

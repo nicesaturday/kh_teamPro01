@@ -199,6 +199,8 @@ label span {
   text-transform: uppercase;
 }
 
+
+
 input {
   display: block;
   width: 100%;
@@ -306,7 +308,7 @@ input {
     </div>
     <script>
         document.querySelector('.img__btn').addEventListener('click', function() {
-            location.href = "${hpath }/join";
+            location.href = "${hpath }/join_term";
         });
         document.querySelector('.fb-btn').addEventListener('click', function() {
             location.href = "${hpath }";

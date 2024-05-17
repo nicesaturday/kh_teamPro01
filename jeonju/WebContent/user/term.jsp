@@ -10,9 +10,8 @@
 <%@ include file="/css/header2.css" %>
 </style>
 <style>
-#content {width: 100%; display: flex; align-items: center; justify-content: center; flex-direction: column;}
 #line {width: 100%; height: 10px; border-bottom: 1px solid #F24405;}
-.page { width: 1000px; }
+.page { width: 1000px; margin: 20px auto;}
 .form-control { width: 1000px; }
 textarea { font-family: 'SUIT Variable', sans-serif; }
 .term {display: flex; flex-direction: column; justify-content: center;  }

@@ -245,6 +245,13 @@ label span {
   text-align : center;
 }
 
+//header2 햄버거 고정 (왜냐하면 label에 직접 적용함)
+
+
+#hd_main_wrap .tnb label {
+  margin: 0;
+}
+
 input {
   display: block;
   width: 100%;

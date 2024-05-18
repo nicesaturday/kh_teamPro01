@@ -1,17 +1,17 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <%@page import="org.json.simple.JSONArray"%>
 <%@page import="java.io.PrintWriter"%>
 <%@page import="org.json.simple.JSONObject"%>
 <%@page import="org.jeonju.dto.guide.Tourism"%>
-<%@page import="java.util.List"%>
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+<%@page import="java.util.List"%>    
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
 <title>투어 예약</title>
 <%@ include file="/head.jsp" %>
-<link rel="stylesheet" href="${hpath }/css/header2.css?after"/>
+<link rel="stylesheet" href="${hpath }/css/header2.css?after1"/>
 <style>
 #content {width: 100%;}
 .breadcrumb { font-size: 0.9em; margin-bottom: 10px; color:rgb(134, 134, 134); text-align: center; }
@@ -26,7 +26,7 @@
 .content { width: 100%; height: 800px;}
 .content form {width: 300px; margin: 0 auto; line-height: 2em;}
 .page_subtitle {color: #f2522e; font-size: 25px; font-weight: 700; text-align: center; margin-bottom: 50px; margin-top: 60px; }
-.form_wrap li input { width: 300px; box-shadow: none; border-style: none; border-bottom: 1px solid #000; padding: 5px; }
+.form_wrap li input { width: 300px; border-style: none; border-bottom: 1px solid #000; padding: 5px; }
 .form_wrap li select { width: 310px; height: 30px; border-color: #bebebe;}
 .form_wrap li {margin-bottom: 20px;}
 .form_wrap li label { font-weight: 700;}
@@ -56,16 +56,16 @@
 	            <ul class="form_wrap">
 	                <li>
 	                    <div><label for="name"> 이름</label></div>
-	                    <div><input type="text" name="name" id="name" readonly value=${sname } ></div>
+	                    <div><input type="text" name="name" id="name" readonly="readonly" value="${sname }" ></div>
 	                    <div><input type="password" name="user_no" id="user_no" hidden="hidden" readonly value=${sno } ></div>
 	                </li>
 	                <li>
 	                    <div><label for="phoneNumber"> 연락처</label></div>
-	                    <div><input type="text" name="phoneNumber" id="phoneNumber" readonly value=${sphone_num } ></div>
+	                    <div><input type="text" name="phoneNumber" id="phoneNumber" readonly value="${sphone_num }" ></div>
 	                </li>
 	                <li>
 	                    <div><label for="email"> 이메일</label></div>
-	                    <div><input type="text" name="email" id="email" readonly value=${semail } ></div>
+	                    <div><input type="text" name="email" id="email" readonly value="${semail }" ></div>
 	                </li>
 	                <li>
 	                    <div><label for="course">희망코스</label></div>

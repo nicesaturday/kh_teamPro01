@@ -58,7 +58,7 @@ public class UserDAO {
 								     rs.getString("pw"), 
 								     rs.getString("email"), 
 								     rs.getString("phone_num"), 
-								     rs.getString("adress"),
+								     rs.getString("address"),
 								     rs.getString("resdate"));
 				userList.add(user);
 			}
@@ -94,18 +94,18 @@ public class UserDAO {
 	}
 	
 	
-	//미구현
-	public int updateUser(User user) {
+	
+	public int updateUser(User user , int no) {
 		int cnt = 0;
 		
 		 try {
 			 con = db.connect();
 			 pstmt = con.prepareStatement(SqlLang.UPDATEUSER);
 			 pstmt.setString(1, user.getName());
-			 pstmt.setString(2, user.getPw());
-			 pstmt.setString(3, user.getEmail());
-			 pstmt.setString(4, user.getPhone_num());
-			 pstmt.setString(5, user.getAddress());
+			 pstmt.setString(2, user.getEmail());
+			 pstmt.setString(3, user.getPhone_num());
+			 pstmt.setString(4, user.getAddress());
+			 pstmt.setInt(5, no);
 			 cnt = pstmt.executeUpdate();
 		 } catch (Exception e) {
 			 e.printStackTrace();

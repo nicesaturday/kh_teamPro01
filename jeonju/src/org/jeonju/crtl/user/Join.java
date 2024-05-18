@@ -69,9 +69,9 @@ public class Join extends HttpServlet {
 		
 		User user = new User(0, 
 							request.getParameter("id"), 
-							request.getParameter("email"), 
-							request.getParameter("name"), 
+							request.getParameter("name"),
 							pw, 
+							request.getParameter("email"), 
 							request.getParameter("phone_num"), 
 							address, 
 						    "date");

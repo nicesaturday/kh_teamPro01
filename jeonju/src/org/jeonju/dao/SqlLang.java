@@ -9,7 +9,7 @@ public interface SqlLang {
 	final static String GETUSERONE = "select * from user where id = ?";
 	final static String GETUSERALL = "select * from user"; 
 	final static String INSERTUSER = "insert into user value(default , ? , ? , ? , ?  ,? , ? ,default)";
-	final static String UPDATEUSER = "update user set name = ? , pw = ? , email = ? , phone_num = ? , address = ?" ;
+	final static String UPDATEUSER = "update user set name = ? , email = ? , phone_num = ? , address = ? where no = ?";
 	final static String DELETEUSER = "delete from user where no = ?";
 	
 	//qna sql
@@ -21,14 +21,15 @@ public interface SqlLang {
 	final static String DELETEQ = "delete from qna where parno = ?"; //q가 삭제 되면 a도 한번에 삭제;
 	final static String DELETEA = "delete from qna where no = ?"; //a 만 삭제;
 	
-	//tour sql
+	//guide sql
 	final static String GETTOURISMLIST = "select * from tourism";
 	final static String GETTOURISMONE = "select * from tourism where no = ?";
 	final static String GETTOURISMSFEOMCIDLIST = "select * from tourism where c_id = ?";
 	final static String GETTBOUGHTLIST = "select * from t_bought where user_no = ?";
 	final static String INSERTTBOUGHT = "insert into t_bought values(default , ? , default , ? , ? , ?)";
 	final static String UPDATEMAXHEADCOUNT = "update tourism set max_headcount=max_headcount- ? where no = ?";
-	final static String DELETETBOUGHT = "delete from t_bought where no = ?";
+	final static String DELETETBOUGHT = "delete from t_bought where user_no = ?";
+	final static String IMPROVEHEADCOUNT = "update tourism set max_headcount=max_headcount+ ? where no = ?";
 	
 	//notice sql
 	final static String GETNOTICE = "select * from notice order by no";

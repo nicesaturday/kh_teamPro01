@@ -12,9 +12,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>로그인</title>
 <%@ include file="/head.jsp" %>
-   <style>
-<%@ include file="/css/header2.css" %>
-   </style>
+<link rel="stylesheet" href="${hpath }/css/header2.css" />
    <style>
 *, *:before, *:after {
   box-sizing: border-box;
@@ -272,7 +270,7 @@ input {
             	  <span>ID</span>
             	</c:otherwise>         
             </c:choose>         
-                <input type="text" name="id" id="id"/>
+                <input type="text" name="id" id="id" value="${errorId2 }"/>
             </label>
             <label>
             	<c:choose>

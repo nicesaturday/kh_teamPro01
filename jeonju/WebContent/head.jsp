@@ -11,7 +11,7 @@
 <meta property="og:title" content="jeonju">
 <meta property="og:description" content="전주시 , 한옥 마을 , 축제 , 관광 ">
 <meta property="og:type" content="website">
-<%-- <meta property="og:image" content="${hpath }/img/"> --%>
+<%-- <meta property="og:image" content="${hpath }/img/favicon.png"> --%>
 <script src="${hpath }/js/bootstrap.bundle.5.1.3.min.js"  crossorigin="anonymous"></script>
 
 
@@ -20,8 +20,8 @@
 
 
 <!-- 바로가기 또는 파비콘 -->
-<link rel="icon" href="images/favicon.png" />
-<link rel="shortcut icon" href="images/favicon.png">
+<link rel="icon" href="img/favicon.png" />
+<link rel="shortcut icon" href="img/favicon.png">
 
 <%-- <meta property="og:image" content="${hpath }/img/"> --%>
 

@@ -49,7 +49,6 @@ public class TourReservation extends HttpServlet {
 		 
 
 		int c_id = Integer.parseInt(request.getParameter("c_id"));
-		System.out.println(c_id);
 		GuideDAO gd = new GuideDAO();
 		// 투어 객체 하나 전달
 		List<Tourism> tourismFromCidList = gd.getTourismsFromCid(c_id);

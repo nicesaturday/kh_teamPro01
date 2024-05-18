@@ -75,6 +75,7 @@ public class Login extends HttpServlet {
 			}
 			if(!pw.equals(pw_exist)) {
 				RequestDispatcher view = request.getRequestDispatcher("/user/login.jsp");
+				request.setAttribute("errorId2", id);
 				request.setAttribute("errorPw", "PASSWORD 불일치");
 				view.forward(request, response);
 				return;

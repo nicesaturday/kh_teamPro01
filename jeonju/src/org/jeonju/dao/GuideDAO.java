@@ -99,22 +99,20 @@ public class GuideDAO {
 		return tourism;
 	}
 	
-	public List<TBought> getTBoughtList(int no) {
-		List<TBought> TBoughtList = new ArrayList<TBought>();
+	public TBought getTBoughtOne(int no) {
+		TBought TBought = null;
 		try {
 			con = db.connect();
 			pstmt = con.prepareStatement(SqlLang.GETTBOUGHTLIST);
 			pstmt.setInt(1, no);
 			rs = pstmt.executeQuery();
-			while(rs.next()) {
-				TBought TBought = new TBought(rs.getInt("no"),
+			if(rs.next()) {
+				TBought = new TBought(rs.getInt("no"),
 								  rs.getString("start_time"),
 						          rs.getString("resdate"),
 						          rs.getInt("headcount"),
 						          rs.getInt("user_no"),
 						          rs.getInt("t_no"));
-				
-				TBoughtList.add(TBought);
 			}
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -122,7 +120,7 @@ public class GuideDAO {
 			db.close(con, pstmt, rs);
 		}
 		
-		return TBoughtList;
+		return TBought;
 	}
 	
 	public int insertTbought(TBought tbought) {
@@ -154,13 +152,20 @@ public class GuideDAO {
 	
 
 	
-	public int deleteTbought(int no) {
+	public int deleteTbought(int u_no ,int no , int head_count) {
 		int cnt = 0;
 		
 		try {
 			con = db.connect();
+			pstmt = con.prepareStatement(SqlLang.IMPROVEHEADCOUNT);
+			pstmt.setInt(1, head_count);
+			pstmt.setInt(2, no);
+			cnt = pstmt.executeUpdate();
+			
+			pstmt = null;
+			
 			pstmt = con.prepareStatement(SqlLang.DELETETBOUGHT);
-			pstmt.setInt(1, no);
+			pstmt.setInt(1, u_no);
 			cnt = pstmt.executeUpdate();
 		} catch (Exception e) {
 			e.printStackTrace();

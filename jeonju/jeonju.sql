@@ -58,7 +58,7 @@ create table user(no int auto_increment primary key, id varchar(500) not null un
    alter table user add resdate datetime default now();
    insert into user values(default , "nice" , "yes" , "1234" , "sasa" , "010" , "t" , default);
    select * from user;
-   delete from user where no = 2;
+   delete from user where no = 5;
    
    drop table tourism;
 create table tourism(no int auto_increment primary key, c_id int not null ,name varchar(500) not null , start_locate varchar(500) not null , lang varchar(1000) , course varchar(2000) , max_headcount int default 20 , need_time int default 1 , when_time int not null); 

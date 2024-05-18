@@ -5,19 +5,17 @@ public class Qna {
 	private String user_name;
 	private String title;
 	private String comment;
-	private int category;
 	private int q_level;
 	private int parno;
 	private String resdate;
 	private int visited;
-	public Qna(int no, String user_name, String title, String comment, int category, int q_level, int parno,
-			String resdate, int visited) {
+	public Qna(int no, String user_name, String title, String comment, int q_level, int parno, String resdate,
+			int visited) {
 		super();
 		this.no = no;
 		this.user_name = user_name;
 		this.title = title;
 		this.comment = comment;
-		this.category = category;
 		this.q_level = q_level;
 		this.parno = parno;
 		this.resdate = resdate;
@@ -47,12 +45,6 @@ public class Qna {
 	public void setComment(String comment) {
 		this.comment = comment;
 	}
-	public int getCategory() {
-		return category;
-	}
-	public void setCategory(int category) {
-		this.category = category;
-	}
 	public int getQ_level() {
 		return q_level;
 	}
@@ -79,9 +71,8 @@ public class Qna {
 	}
 	@Override
 	public String toString() {
-		return "Qna [no=" + no + ", user_name=" + user_name + ", title=" + title + ", comment=" + comment
-				+ ", category=" + category + ", q_level=" + q_level + ", parno=" + parno + ", resdate=" + resdate
-				+ ", visited=" + visited + "]";
+		return "Qna [no=" + no + ", user_name=" + user_name + ", title=" + title + ", comment=" + comment + ", q_level="
+				+ q_level + ", parno=" + parno + ", resdate=" + resdate + ", visited=" + visited + "]";
 	}
 	
 	

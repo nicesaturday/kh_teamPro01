@@ -9,7 +9,7 @@ import java.util.List;
 import org.jeonju.dao.MysqlDB;
 import org.jeonju.dao.SqlLang;
 import org.jeonju.dto.User;
-import org.jeonju.dto.travel.Festival;
+import org.jeonju.dto.tour.Festival;
 
 public class FestivalDAO {
 	Connection con = null;

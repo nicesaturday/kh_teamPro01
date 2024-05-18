@@ -10,7 +10,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import org.jeonju.dao.tour.FestivalDAO;
-import org.jeonju.dto.travel.Festival;
+import org.jeonju.dto.tour.Festival;
 import org.json.simple.JSONObject;
 
 

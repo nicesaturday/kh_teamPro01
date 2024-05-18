@@ -13,8 +13,8 @@
                <li class="item">
                    <a href="#" class="dp1">전주여행</a>
                    <ul class="submenu">
-                       <li><a href="">주요명소</a></li>
-                       <li><a href="">문화시설</a></li>
+                       <li><a href="${hpath }/mainattraction_list">주요명소</a></li>
+                       <li><a href="${hpath }/culturalfacilities_list">문화시설</a></li>
                        <li><a href="${hpath }/festival_list">대표축제</a></li>
                    </ul>
                </li>
@@ -59,7 +59,7 @@
                    <a href="" class="dp1">공지사항</a>
                    <ul class="submenu">
                        <li><a href="">공지사항</a></li>
-                       <li><a href="">QnA</a></li>
+                       <li><a href="${hpath }/qna_list">QnA</a></li>
                    </ul>
                </li>
            </ul>

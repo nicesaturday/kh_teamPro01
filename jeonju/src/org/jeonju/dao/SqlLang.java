@@ -42,7 +42,10 @@ public interface SqlLang {
 	//Festival sql
 	final static String GETFESTIVALLIST = "select * from festival";
 	final static String GETFESTIVALONE = "select * from festival where no = ?";
-	
+    final static String GETCulturalFacilitiesList = "select * from cultural_facilities";
+    final static String GETCulturalFacilitiesOne = "select * from cultural_facilities where no = ?";
+    final static String GETMainAttractionList = "select * from main_attraction";
+    final static String GETMainAttractionOne = "select * from main_attraction where no = ?";
 	
 	//override
 	public Connection connect();

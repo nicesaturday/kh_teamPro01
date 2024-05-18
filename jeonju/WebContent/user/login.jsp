@@ -13,7 +13,7 @@
     <title>로그인</title>
 <%@ include file="/head.jsp" %>
 <link rel="stylesheet" href="${hpath }/css/header2.css" />
-   <style>
+<style>
 *, *:before, *:after {
   box-sizing: border-box;
 }
@@ -199,7 +199,7 @@ label span {
 
 
 
-input {
+.form sign-in input {
   display: block;
   width: 100%;
   margin-top: 5px;

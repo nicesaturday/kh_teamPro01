@@ -2,8 +2,9 @@
 
 -- 주요 명소
     drop table main_attraction;
-create table main_attraction(no int auto_increment primary key ,  name varchar(500) not null, tel varchar(500), locate varchar(2000) , img varchar(300), comment varchar(2000) ,visited int default 0);
+create table main_attraction(no int auto_increment primary key, name varchar(500) not null, locate varchar(500) , comment varchar(2000) , img varchar(300),sub_img1 varchar(300),sub_img2 varchar(300) , tel varchar(100) , period varchar(200) , homepage varchar(1000) , sub1 varchar(200) , sub2 varchar(200));
 desc main_attraction;
+
 
 
     
@@ -14,8 +15,21 @@ desc main_attraction;
 
 -- 문화 시설
     drop table cultural_facilities;
-create table cultural_facilities(no int auto_increment primary key, name varchar(500) not null , locate varchar(1000), tel varchar(100), img varchar(300), comment varchar(2000), visited int default 0 );
+create table cultural_facilities(no int auto_increment primary key, name varchar(500) not null, locate varchar(500) , comment varchar(2000) , img varchar(300),sub_img1 varchar(300),sub_img2 varchar(300) , tel varchar(100) , period varchar(200) , homepage varchar(1000) , sub1 varchar(200) , sub2 varchar(200));
     desc cultural_facilities;
+insert into cultural_facilities values(default , '전주역사박물관' ,  '전주시 완산구 쑥고개로 259' , 
+'2002년5월 개관한 이래 전주의 역사와 문화 관련1만여점 이상의 유물을 수집·관리·연구·전시한 박물관이다. 지역의 콘텐츠를 발굴하여 시민들에게 지역의 자긍심과 정체성을 확립할 수 있도록 다양한 교육 프로그램을 운영하고 있다.' , 'img/cultural/jeonjuhismuse.jpg' ,'img/cultural/jeonjuhismuse1.jpg','img/cultural/jeonjuhismuse2.png' ,'063-228-6485' , ' 09:00 ~ 18:00' , 'https://e.jeonju.go.kr/home/SubPage.html?CID=pages-com01_view.php&&listtype=1&co_gubun=&co_id=30' , '관람 종료 30분 전까지 입장하셔야 관람 가능합니다.' , '매주 월요일, 1월 1일.월요일이 공휴일일 시 화요일 휴무');
+insert into cultural_facilities values(default , '전주빙상경기장' ,  ' 전주시 완산구 백제대로 310 (중화산동2가, 화산체육관)' , 
+'변화무쌍한 날씨에도 아이들과 혹은 연인과 즐길 수 있는 전주 빙상경기장은 안전한 시설뿐만 아니라 저렴한 이용료와 대여료로 편히 즐길 수 있습니다.' , 'img/cultural/bingsan.jpg' ,'img/cultural/bingsan1.png','img/cultural/bingsan2.png' ,'063-239-2578' , ' 09:00 ~ 18:00' , 'http://www.jbsports.or.kr/site/menu/MENU_000000000000061' , '*설, 추석 명절 전일 및 당일 휴무' , '대여실에서 나에게 맞는 스케이트를 대여하며, 신발과 지갑 등 물품은 물품보관함을 통해 보관할 수 있습니다.
+스케이트장 입장은 안전을 위해 헬멧과 장갑 착용 후 가능합니다. 헬멧은 대여실 앞에서 무료로 이용가능하며, 건조기를 통해 살균 건조되어 관리되고 있어 안심하고 사용할 수 있습니다. 장갑은 개인적으로 준비하거나 매점에서 쉽게 구매할 수 있습니다.');
+insert into cultural_facilities values(default , '전주천년한지관' ,  '전주시 완산구 흑석로 85 (서서학동, 전주천년한지관)' , 
+'전주천년한지관은 전통한지 계승과 보전, 문화확산을 위한 거점공간으로서 국내 최대 한지제조시설을 보유한 한지복합문화공간입니다. 누구나 한지를 배우고 경험할 수 있는 전통한지 제조교육과 생활속 한지예술, 전주한지 복원연구와 한지 문화기획 등 한지의 깊이와 너비를 전달하고자 하는 전통한지 거점공간입니다.' , 'img/cultural/hanji.png' ,'img/cultural/hanji1.png','img/cultural/hanji2.png' ,'063-281-1630' , '' , 'http://www.jmhm.kr/main/' , '' , '');
+insert into cultural_facilities values(default , '전주한옥마을역사관' ,  '전주시 완산구 최명희길 17-10' , 
+'전주한옥마을의 역사는 건물에만 있는 것이 아니다. 이곳을 살았던 사람들의 소소한 이야기, 길가의 나무와 꽃, 골목의 바람과 햇살, 마당가 우물의 깊은 바닥에도 한옥마을의 역사가 숨쉬고 있다. 대한민국에서 유일하게 보존되어 있는 900여채의 전주한옥마을은 어떻게 생겨나고 이어져서 오늘에 이르렀을까?
+전주한옥마을역사관에서 한옥마을의 역사와 이야기를 들으며 VR로 가상현실도 체험해 보자. ' , 'img/cultural/hanokhi.png' ,'img/cultural/hanokhi1.png','img/cultural/hanokhi2.png' ,'063-286-5125' , '매주 화요일~일요일 10:00~18:00 (월요일 휴관)' , '#' , '정기해설 , 수시해설 있음' , '');
+    delete from cultural_facilities where no = 4;
+    
+    
     
 -- 숙박
     drop table lodgment;
@@ -100,8 +114,8 @@ create table t_bought(no int auto_increment primary key , start_time varchar(100
   
   
   drop table qna;
-create table qna(no int auto_increment primary key , user_name varchar(500) not null, title varchar(1000) not null , comment varchar(2000) not null , category int not null  ,q_level int not null , parno int ,resdate datetime default now() , visited int default 0 ,  foreign key (user_name) references user(name) on delete cascade on update cascade  );
-insert into qna values(default , 1 , "hi" , "yes" , 1 , 0 , default , default );
+create table qna(no int auto_increment primary key , user_name varchar(500) not null, title varchar(1000) not null , comment varchar(2000) not null , q_level int not null , parno int ,resdate datetime default now() , visited int default 0 ,  foreign key (user_name) references user(name) on delete cascade on update cascade  );
+insert into qna values(default , "김두한" , "hi" , "yes",1 , 1 , 1 , default , default );
 insert into qna values(default , 1 , "hi" , "yes" , 1 , 0 , default , default );
 insert into qna values(default , 1 , "hi" , "yes" , 1 , 0 , default , default );
   desc qna;

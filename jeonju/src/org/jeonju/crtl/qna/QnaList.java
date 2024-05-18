@@ -39,7 +39,7 @@ public class QnaList extends HttpServlet {
 		QnaDAO qd = new QnaDAO();
 		List<Qna> qnaList = qd.getQnaList();
 		
-		request.setAttribute("qnaList", qnaList);
+		request.setAttribute("data", qnaList);
 		
 		RequestDispatcher view = request.getRequestDispatcher("/qna/qnaList.jsp");
 		view.forward(request, response);

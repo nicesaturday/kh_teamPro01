@@ -25,7 +25,6 @@ public class QnaDAO {
 								  rs.getString("user_name"),
 						          rs.getString("title"),
 						          rs.getString("comment"),
-						          rs.getInt("category"),
 						          rs.getInt("q_level"),
 						          rs.getInt("parno"),
 						          rs.getString("resdate"),
@@ -62,7 +61,6 @@ public class QnaDAO {
 							  rs.getString("user_name"),
 					          rs.getString("title"),
 					          rs.getString("comment"),
-					          rs.getInt("category"),
 					          rs.getInt("q_level"),
 					          rs.getInt("parno"),
 					          rs.getString("resdate"),
@@ -117,4 +115,6 @@ public class QnaDAO {
 		}
 		return cnt;
 	}
+	
+	
 }

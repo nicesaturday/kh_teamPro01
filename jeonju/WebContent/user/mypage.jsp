@@ -207,7 +207,6 @@
 <body>
 <div id="content">
 <%@ include file="/header.jsp" %>
-
 <div class="page_title"><h3>회원 정보</h3></div>
 <div class="breadcrumb">마이페이지 > 예약 내역 확인</div>
 <div id="line"></div>

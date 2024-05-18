@@ -55,13 +55,13 @@
                             <li>
                                 <p>국문</p>
                                 <ul>
-                                    <li><a href="${hpath }/pdf/mapTour_kor.pdf" download="mapTour_kor.pdf"><div class="button"><span class="material-symbols--download"></span>다운로드</div></a></li>
+                                    <li><a href="${pageContext.request.contextPath}/downloadPdf?file=mapTour_kor.pdf" download=""><div class="button"><span class="material-symbols--download"></span>다운로드</div></a></li>
                                 </ul>
                             </li>
                             <li>
                                 <p>ENG</p>
                                 <ul>
-                                    <li><a href="${hpath }/pdf/mapTour_eng.pdf" download=""><div class="button"><span class="material-symbols--download"></span>다운로드</div></a></li>
+                                    <li><a href="${pageContext.request.contextPath}/downloadPdf?file=mapTour_eng.pdf" download=""><div class="button"><span class="material-symbols--download"></span>다운로드</div></a></li>
                                 </ul>
                             </li>
                         </ul>
@@ -79,13 +79,13 @@
                             <li>
                                 <p>국문</p>
                                 <ul>
-                                    <li><a href="${hpath }/pdf/mapFood_kor.pdf" download=""><div class="button"><span class="material-symbols--download"></span>다운로드</div></a></li>
+                                    <li><a href="${pageContext.request.contextPath}/downloadPdf?file=mapFood_kor.pdf" download=""><div class="button"><span class="material-symbols--download"></span>다운로드</div></a></li>
                                 </ul>
                             </li>
                             <li>
                                 <p>ENG</p>
                                 <ul>
-                                    <li><a href="${hpath }/pdf/mapFood_eng.pdf" download=""><div class="button"><span class="material-symbols--download"></span>다운로드</div></a></li>
+                                    <li><a href="${pageContext.request.contextPath}/downloadPdf?file=mapFood_eng.pdf" download=""><div class="button"><span class="material-symbols--download"></span>다운로드</div></a></li>
                                 </ul>
                             </li>
                         </ul>
@@ -104,7 +104,7 @@
                         <div class="button_group_wrap">
                             <ul class="button_group">
 
-                                <li><a href="${hpath }/pdf/mapHanok.jpg" download=""><div class="button"><span class="material-symbols--download"></span>다운로드</div></a></li>
+                                <li><a href="${pageContext.request.contextPath}/downloadPdf?file=mapHanok.jpg" download=""><div class="button"><span class="material-symbols--download"></span>다운로드</div></a></li>
                             </ul>
                         </div>
                     </div>
@@ -119,7 +119,7 @@
                         <div class="button_group_wrap">
                             <ul class="button_group">
 
-                                <li><a href="${hpath }/pdf/mapExp.pdf" download=""><div class="button"><span class="material-symbols--download"></span>다운로드</div></a></li>
+                                <li><a href="${pageContext.request.contextPath}/downloadPdf?file=mapExp.pdf" download=""><div class="button"><span class="material-symbols--download"></span>다운로드</div></a></li>
                             </ul>
                         </div>
                     </div>
@@ -136,7 +136,7 @@
                         <div class="button_group_wrap">
                             <ul class="button_group">
 
-                                <li><a href="${hpath }/pdf/mapBikeway.pdf" download=""><div class="button"><span class="material-symbols--download"></span>다운로드</div></a></li>
+                                <li><a href="${pageContext.request.contextPath}/downloadPdf?file=mapBikeway.pdf" download=""><div class="button"><span class="material-symbols--download"></span>다운로드</div></a></li>
                             </ul>
                         </div>
                     </div>
@@ -144,6 +144,7 @@
                 <div class="map" id="map4">
                     <div class="map" id="map1">
                         <div class="map_img2"><img src="${hpath }/img/map/map_walk.jpg" alt=""></div>
+                        
                         <div class="map_text">
                             <h3>전주 도보여행 지도</h3>
                             <p>사드락사드락 걸어서
@@ -152,7 +153,9 @@
                         <div class="button_group_wrap">
                             <ul class="button_group">
 
-                                <li><a href="${hpath }/pdf/walkingMap.pdf" download=""><div class="button"><span class="material-symbols--download"></span>다운로드</div></a></li>
+                                <li><a href="${pageContext.request.contextPath}/downloadPdf?file=walkingMap"><div class="button"><span class="material-symbols--download"></span>다운로드</div></a></li>
+                                
+								
                             </ul>
                         </div>
                     </div>
@@ -163,6 +166,11 @@
         <section class="page" id="page2">
 
         </section >
+        <script src="https://mozilla.github.io/pdf.js/build/pdf.js"></script>
+        <script>
+         const url = ''
+        </script>
+        
     </div>
 <%@ include file="/footer.jsp" %>    
 </body>

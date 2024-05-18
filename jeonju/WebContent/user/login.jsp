@@ -199,7 +199,7 @@ label span {
 
 
 
-.form sign-in input {
+input {
   display: block;
   width: 100%;
   margin-top: 5px;

@@ -52,7 +52,7 @@ button:hover {
         <div class="page_title"><h3>이용 약관 및 개인정보 처리방침</h3></div>
         <div id="line"></div>
         
-        <section class="page" id="page1">
+        <section class="page" id="page1" style="padding-bottom: 20px">
             <div class="term">
                 <div class="term_wrap">
                     <h4 class="title">회원 약관 동의</h4>

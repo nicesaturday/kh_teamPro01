@@ -22,7 +22,7 @@
                <li class="item">
                    <a href="#" class="dp1">숙박·쇼핑</a>
                    <ul class="submenu">
-                       <li><a href="">숙박</a></li>
+                       <li><a href="https://www.agoda.com/ko-kr/city/jeonju-si-kr.html?site_id=1922868&tag=89250035-e814-47b1-9131-303a7e936f96&gad_source=1&device=c&network=g&adid=693618693758&rand=18421755192373108443&expid=&adpos=&aud=kwd-343251542145&gclid=Cj0KCQjwxqayBhDFARIsAANWRnQ4rBbAlvL87l-eHeAuNYlJ9y5r5Uw65BINAZxm1VOwpC3sfJLAnZwaAvpFEALw_wcB&pslc=1" target="_blank">숙박</a></li>
                        <li><a href="${hpath }/shopping">전통시장</a></li>
                        <li><a href="${hpath }/cheongnyeon_mall">청년몰</a></li>
                    </ul>
@@ -56,9 +56,9 @@
                    </ul>
                </li>
                <li class="item">
-                   <a href="" class="dp1">공지사항</a>
+                   <a href="${hpath }/notice_list" class="dp1">공지사항</a>
                    <ul class="submenu">
-                       <li><a href="">공지사항</a></li>
+                       <li><a href="${hpath }/notice_list">공지사항</a></li>
                        <li><a href="${hpath }/qna_list">QnA</a></li>
                    </ul>
                </li>
@@ -75,7 +75,7 @@
         
         
            <input style="display: none;" type="checkbox" id="sidemenu"  checked>
-	       <label style="margin: 0;" for="sidemenu" class="sideBtn" onclick=""><span class="fe--bar"><span></label>
+	       <label style="margin: 0;" for="sidemenu" class="sideBtn hide" onclick=""><span class="fe--bar"><span></label>
        </div>
    </div>
 </header>
@@ -95,6 +95,8 @@
        
        document.querySelector('#hd_main_wrap').classList.remove('header-hover');
    });
+   
+   
 </script>
 <script>
 	const gnb2 = document.getElementById('gnb');

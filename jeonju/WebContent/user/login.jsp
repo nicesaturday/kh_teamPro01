@@ -32,9 +32,9 @@ input, button {
 
 .tip {
   font-size: 20px;
-  margin: 40px auto 50px;
+  margin: 40px auto;
   text-align: center;
-}
+} 
 
 .cont {
   overflow: hidden;
@@ -49,7 +49,7 @@ input, button {
   position: relative;
   width: 640px;
   height: 100%;
-  padding: 50px 30px 0;
+  padding: 50px 30px;
 }
 
 .sub-cont {
@@ -81,7 +81,7 @@ button {
 
 .img {
   overflow: hidden;
-  z-index: 2;
+  z-index: 1;
   position: absolute;
   left: 0;
   top: 0;
@@ -184,13 +184,15 @@ h2 {
   font-size: 26px;
   text-align: center;
 }
-
-label {
+.tna a {
   display: block;
+  text-align: center;
+}
+ label {
   width: 260px;
   margin: 25px auto 0;
   text-align: center;
-}
+} 
 label span {
   font-size: 12px;
   color: #cfcfcf;
@@ -251,6 +253,7 @@ input {
 }
 
 
+
     </style>
 </head>
 <body>
@@ -261,7 +264,7 @@ input {
       <form action="${hpath }/login" method="post">
         <div class="form sign-in">
             <h2>재방문을 환영합니다.</h2>
-            <label>
+            <label style="display: block;">
             <c:choose>
             	<c:when test="${!empty errorId }">
             	  <span style="color: red">${errorId }</span>
@@ -272,7 +275,7 @@ input {
             </c:choose>         
                 <input type="text" name="id" id="id" value="${errorId2 }"/>
             </label>
-            <label>
+            <label style="display: block;">
             	<c:choose>
             		<c:when test="${!empty errorPw }">
             	  	  <span style="color: red">${errorPw }</span>

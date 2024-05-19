@@ -33,8 +33,15 @@ public class UserDelete extends HttpServlet {
 		response.setCharacterEncoding("UTF-8");
 		response.setContentType("text/html; charset=UTF-8");	
 		
+		
+		
+		
 		int cnt = 0;
 		HttpSession session = request.getSession();
+		if((String)session.getAttribute("sname") != null) {
+			response.sendRedirect("/jeonju");
+			return;
+		}
 		int no = (Integer)session.getAttribute("sno");
 		
 		

@@ -1,26 +1,25 @@
-package org.jeonju.crtl.user;
+package org.jeonju.crtl.qna;
 
 import java.io.IOException;
-
-import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
+
+import org.jeonju.dao.QnaDAO;
 
 /**
- * Servlet implementation class JoinTermMiddleware
+ * Servlet implementation class QnaDelete
  */
-@WebServlet("/join_term")
-public class JoinTermMiddleware extends HttpServlet {
+@WebServlet("/qna_delete")
+public class QnaDelete extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public JoinTermMiddleware() {
+    public QnaDelete() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -32,14 +31,19 @@ public class JoinTermMiddleware extends HttpServlet {
 		request.setCharacterEncoding("UTF-8");
 		response.setCharacterEncoding("UTF-8");
 		response.setContentType("text/html; charset=UTF-8");
-		HttpSession session = request.getSession();
-		if((String)session.getAttribute("sname") != null) {
-			response.sendRedirect("/jeonju");
-			return;
-		}
 		
-		RequestDispatcher view = request.getRequestDispatcher("/user/joinTermMiddleware.jsp");
-		view.forward(request, response);
+		int cnt = 0;
+		Integer parno = null;
+		if(request.getParameter("parno") != null) parno = Integer.parseInt(request.getParameter("parno"));
+		Integer no = null;
+		if(request.getParameter("no") != null) no = Integer.parseInt(request.getParameter("no"));
+		
+		QnaDAO qd = new QnaDAO();
+		cnt = qd.deleteQna(no,parno);
+		
+		if(cnt > 0) {
+			response.sendRedirect("/jeonju/qna_list");
+		}
 	}
 
 }

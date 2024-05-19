@@ -16,7 +16,8 @@ public interface SqlLang {
 	final static String GETQNALIST = "select * from qna order by parno asc";
 	final static String GETQNAONE = "select * from qna where no = ?"; 
 	final static String INSERTQ = "insert into qna values(default , ? , ? , ? , 1 , 0 , default , default)";
-	final static String INSERTA = "insert into qna values(defualt , ? , ? , ? , 2 , ? , default , default)";
+	final static String INSERTA = "insert into qna values(default , ? , ? , ? , 2 , ? , default , default)";
+	final static String UPDATEQNA = "update qna set title = ? , comment = ? where no = ?";
 	final static String UPDATEQNAVISITED = "update qna set visited=visited+1 where no = ?";
 	final static String DELETEQ = "delete from qna where parno = ?"; //q가 삭제 되면 a도 한번에 삭제;
 	final static String DELETEA = "delete from qna where no = ?"; //a 만 삭제;
@@ -33,7 +34,7 @@ public interface SqlLang {
 	
 	//notice sql
 	final static String GETNOTICE = "select * from notice order by no";
-	final static String INSNOTICE = "insert into notice values(default,?,?,default,default)";
+	final static String INSNOTICE = "insert into notice values(default,default,?,?,default,default)";
 	final static String GETNOTICEONE = "select * from notice where no = ?";
 	final static String DELETENOTICE = "delete from notice where no = ?";
 	final static String UPDATENOTICE = "update notice set title=? , comment=? where no = ?";

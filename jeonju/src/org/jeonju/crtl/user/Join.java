@@ -8,11 +8,13 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import org.jeonju.dao.UserDAO;
 import org.jeonju.dto.User;
 
 import com.crypto.util.AES256;
+import com.mysql.cj.Session;
 
 /**
  * Servlet implementation class SignUp
@@ -37,6 +39,12 @@ public class Join extends HttpServlet {
 		request.setCharacterEncoding("UTF-8");
 		response.setCharacterEncoding("UTF-8");
 		response.setContentType("text/html; charset=UTF-8");
+		HttpSession session = request.getSession();
+		if((String)session.getAttribute("sname") != null) {
+			response.sendRedirect("/jeonju");
+			return;
+		}
+		
 		
 		RequestDispatcher view = request.getRequestDispatcher("/user/join.jsp");
 		view.forward(request, response);

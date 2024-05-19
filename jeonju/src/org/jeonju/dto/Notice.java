@@ -2,13 +2,15 @@ package org.jeonju.dto;
 
 public class Notice {
 	private int no;
+	private String name;
 	private String title;
 	private String comment;
 	private String resdate;
 	private int visited;
-	public Notice(int no, String title, String comment, String resdate, int visited) {
+	public Notice(int no, String name, String title, String comment, String resdate, int visited) {
 		super();
 		this.no = no;
+		this.name = name;
 		this.title = title;
 		this.comment = comment;
 		this.resdate = resdate;
@@ -19,6 +21,12 @@ public class Notice {
 	}
 	public void setNo(int no) {
 		this.no = no;
+	}
+	public String getName() {
+		return name;
+	}
+	public void setName(String name) {
+		this.name = name;
 	}
 	public String getTitle() {
 		return title;
@@ -46,9 +54,10 @@ public class Notice {
 	}
 	@Override
 	public String toString() {
-		return "Notice [no=" + no + ", title=" + title + ", comment=" + comment + ", resdate=" + resdate + ", visited="
-				+ visited + "]";
+		return "Notice [no=" + no + ", name=" + name + ", title=" + title + ", comment=" + comment + ", resdate="
+				+ resdate + ", visited=" + visited + "]";
 	}
+	
 	
 	
 	

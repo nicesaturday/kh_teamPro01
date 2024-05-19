@@ -6,9 +6,7 @@
 <meta charset="UTF-8">
 <title>전통 시장</title>
 <%@ include file="/head.jsp" %>
-<style>
-<%@ include file="/css/header2.css" %>
-</style>
+<link rel="stylesheet" href="${hpath }/css/header2.css" />
 <style>
 #content {width: 100%;}
 .breadcrumb { font-size: 0.9em; margin-bottom: 10px; color:rgb(134, 134, 134); text-align: center; }

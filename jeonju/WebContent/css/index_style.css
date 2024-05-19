@@ -11,6 +11,7 @@
     .item > a { font-size: 1.1em; font-weight: 700;color: #fff; }
     .submenu {clear: both; height: 0; padding-top: 20px; transition: 0.5s; overflow: hidden; line-height: 2em; font-size: 0.9em; text-align: center;}
     .tnb {display: flex; margin-right: 50px; width: 100px; min-width: 100px; justify-content: space-around; }
+    .sideBtn.hide {display: none;}
     .tnb a {color: #fff;}
     input { display: none; }
     .fe--bar { color: #fff;}
@@ -29,8 +30,7 @@
         .header-hover .logo a { color: #fff;}
         .header-hover .item > a {color: #fff;}
         .submenu a { color: #fff;}
-        
-
+        .sideBtn.hide {display: block};
     }
 
 	

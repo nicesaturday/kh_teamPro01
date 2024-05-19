@@ -8,6 +8,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import org.jeonju.dao.QnaDAO;
 
@@ -26,17 +27,6 @@ public class QnaInsertA extends HttpServlet {
         // TODO Auto-generated constructor stub
     }
 
-	/**
-	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
-	 */
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		request.setCharacterEncoding("UTF-8");
-		response.setCharacterEncoding("UTF-8");
-		response.setContentType("text/html; charset=UTF-8");
-		
-		RequestDispatcher view = request.getRequestDispatcher("/qna/qnaInsertA.jsp");
-		view.forward(request, response);
-	}
 
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
@@ -46,19 +36,20 @@ public class QnaInsertA extends HttpServlet {
 		response.setCharacterEncoding("UTF-8");
 		response.setContentType("text/html; charset=UTF-8");
 		
+		HttpSession session = request.getSession();
 		int cnt = 0;
 		
-		int user_no = Integer.parseInt(request.getParameter("user_no"));
+		String user_name =(String)session.getAttribute("sname");
 		String title = request.getParameter("title");
 		String comment = request.getParameter("comment");
 		int parno = Integer.parseInt(request.getParameter("parno"));
 		
 		
 		QnaDAO qd = new QnaDAO();
-		cnt = qd.insertA(user_no, title, comment, parno);
+		cnt = qd.insertA(user_name, title, comment, parno);
 		
 		if(cnt > 0) {
-			response.sendRedirect("/qna_list");
+			response.sendRedirect("/jeonju/qna_list");
 		}
 	}
 

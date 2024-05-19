@@ -56,7 +56,7 @@ public class QnaDAO {
 			pstmt = con.prepareStatement(SqlLang.GETQNAONE);
 			pstmt.setInt(1, no);
 			rs = pstmt.executeQuery();
-			if(!isVisit && rs.next()) {
+			if(rs.next()) {
 				qna = new Qna(rs.getInt("no"),
 							  rs.getString("user_name"),
 					          rs.getString("title"),
@@ -75,12 +75,12 @@ public class QnaDAO {
 		return qna;
 	}
 	
-	public int insertQ(int user_no , String title , String comment) {
+	public int insertQ(String user_name , String title , String comment) {
 		int cnt = 0;
 		try {
 			con = db.connect();
 			pstmt = con.prepareStatement(SqlLang.INSERTQ);
-			pstmt.setInt(1, user_no);
+			pstmt.setString(1, user_name);
 			pstmt.setString(2, title);
 			pstmt.setString(3, comment);
 			cnt = pstmt.executeUpdate();
@@ -98,12 +98,12 @@ public class QnaDAO {
 	}
 	
 	
-	public int insertA(int user_no , String title , String comment , int parno) {
+	public int insertA(String user_name , String title , String comment , int parno) {
 		int cnt = 0;
 		try {
 			con = db.connect();
 			pstmt = con.prepareStatement(SqlLang.INSERTA);
-			pstmt.setInt(1, user_no);
+			pstmt.setString(1, user_name);
 			pstmt.setString(2, title);
 			pstmt.setString(3, comment);
 			pstmt.setInt(4, parno);
@@ -113,6 +113,47 @@ public class QnaDAO {
 		} finally {
 			db.close(con, pstmt);
 		}
+		return cnt;
+	}
+	
+	public int updateQna(int no , String title , String comment) {
+		int cnt = 0;
+		try {
+			con = db.connect();
+			pstmt = con.prepareStatement(SqlLang.UPDATEQNA);
+			pstmt.setString(1, title);
+			pstmt.setString(2, comment);
+			pstmt.setInt(3, no);
+			cnt = pstmt.executeUpdate();
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			db.close(con, pstmt);
+		}
+		
+		return cnt;
+	}
+	
+	public int deleteQna(Integer no, Integer parno) {
+		int cnt = 0;
+		con = db.connect();
+		try {
+			if(no == null) {
+			  pstmt = con.prepareStatement(SqlLang.DELETEQ);
+			  pstmt.setInt(1, (int)parno);
+			  cnt = pstmt.executeUpdate();
+			}
+			else if(parno == null) {
+			  pstmt = con.prepareStatement(SqlLang.DELETEA);
+			  pstmt.setInt(1,(int)no);
+			  cnt = pstmt.executeUpdate();
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			db.close(con, pstmt);
+		}
+		
 		return cnt;
 	}
 	

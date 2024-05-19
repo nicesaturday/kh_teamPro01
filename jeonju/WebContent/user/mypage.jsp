@@ -40,9 +40,7 @@
 #mypage_grid_left ul li{
   display: flex;
   justify-content: center;
-  
   padding: 20px 0;
-
 }
 #mypage_grid_left ul li:hover {
   background-color: #FA421A;
@@ -54,10 +52,6 @@
   color: white;
 }
 
-
-#mypage_grid_right {
-  
-}
 
 #mypage_info {
   width: 600px;
@@ -231,7 +225,7 @@
       <input type="text" name="email" value="${semail }" readonly="readonly">
       <br>
       <p>주소 / 우편 번호&nbsp;&nbsp;&nbsp;<button type="button" id="mypage_info_btnblock_btn3" onclick="findAddr()">주소 조회</button></p>
-      <input type="text" nadivme="address1" id="address1" value="${saddress }" readonly="readonly">
+      <input type="text" name="address1" id="address1" value="${saddress }" readonly="readonly">
       <br>
       <p>상세주소</p>
       <input type="text" name="address2" id="address2" value="${saddress }" readonly="readonly">

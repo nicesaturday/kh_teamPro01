@@ -115,7 +115,7 @@ create table t_bought(no int auto_increment primary key , start_time varchar(100
   
   drop table qna;
 create table qna(no int auto_increment primary key , user_name varchar(500) not null, title varchar(1000) not null , comment varchar(2000) not null , q_level int not null , parno int ,resdate datetime default now() , visited int default 0 ,  foreign key (user_name) references user(name) on delete cascade on update cascade  );
-insert into qna values(default , "김두한" , "hi" , "yes",1 , 1 , 1 , default , default );
+insert into qna values(default , "김두한" , "hi" , "yes",1 , 1  , default , default );
 insert into qna values(default , 1 , "hi" , "yes" , 1 , 0 , default , default );
 insert into qna values(default , 1 , "hi" , "yes" , 1 , 0 , default , default );
   desc qna;
@@ -123,6 +123,8 @@ insert into qna values(default , 1 , "hi" , "yes" , 1 , 0 , default , default );
   UPDATE qna AS q1 JOIN (SELECT no FROM qna ORDER BY no DESC LIMIT 1) AS q2 ON q1.no = q2.no SET q1.parno = q2.no;
   
       drop table notice;
-create table notice(no int auto_increment primary key, title varchar(1000) not null, comment varchar(2000) not null , resdate datetime default now() , visited int default 0);
+create table notice(no int auto_increment primary key, name varchar(200) default '관리자' , title varchar(1000) not null, comment varchar(2000) not null , resdate datetime default now() , visited int default 0);
+insert into notice values(default ,default , "hi1" , "hi1" , default , default );
+select * from notice;
     desc notice;
   

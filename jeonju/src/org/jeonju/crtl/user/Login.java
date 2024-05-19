@@ -38,6 +38,13 @@ public class Login extends HttpServlet {
 		response.setCharacterEncoding("UTF-8");
 		response.setContentType("text/html; charset=UTF-8");
 		
+		HttpSession session = request.getSession();
+		if((String)session.getAttribute("sname") != null) {
+			response.sendRedirect("/jeonju");
+			return;
+		}
+		
+		
 		RequestDispatcher view = request.getRequestDispatcher("/user/login.jsp");
 		view.forward(request, response);
 	}

@@ -8,6 +8,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import org.jeonju.dao.NoticeDAO;
 import org.jeonju.dto.Notice;
@@ -15,7 +16,7 @@ import org.jeonju.dto.Notice;
 /**
  * Servlet implementation class NoticeOne
  */
-@WebServlet("/notice_One")
+@WebServlet("/notice_one")
 public class NoticeOne extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
@@ -34,6 +35,12 @@ public class NoticeOne extends HttpServlet {
 		request.setCharacterEncoding("UTF-8");
 		response.setCharacterEncoding("UTF-8");
 		response.setContentType("text/html; charset=UTF-8");
+		
+		HttpSession session = request.getSession();
+		if((String)session.getAttribute("sname") != "관리자") {
+			response.sendRedirect("/jeonju");
+			return;
+		}
 		
 		int no = Integer.parseInt(request.getParameter("no"));
 		

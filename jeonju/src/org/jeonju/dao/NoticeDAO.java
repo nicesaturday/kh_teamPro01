@@ -25,8 +25,9 @@ public class NoticeDAO {
 	    	rs = pstmt.executeQuery();
 	     while(rs.next()) {
 	    	Notice notice = new Notice(rs.getInt("no"),
+	    							   rs.getString("name"),
 	    			                   rs.getString("title"),
-	    			                   rs.getString("content"),
+	    			                   rs.getString("comment"),
 	    			                   rs.getString("resdate"),
 	    			                   rs.getInt("visited"));
 	    	noticeList.add(notice);
@@ -40,14 +41,14 @@ public class NoticeDAO {
 	    return noticeList;
 	}
 	
-	public int insertNotice(String title,String content) {
+	public int insertNotice(String title,String comment) {
 		int cnt = 0;
 		try {
 			con = db.connect();
 			try {
 				pstmt = con.prepareStatement(MysqlDB.INSNOTICE);
 				pstmt.setString(1,title);
-				pstmt.setString(2, content);
+				pstmt.setString(2, comment);
 				cnt = pstmt.executeUpdate();
 			} catch (SQLException e) {
 				e.printStackTrace();
@@ -76,8 +77,9 @@ public class NoticeDAO {
 				rs = pstmt.executeQuery();
 				while(rs.next()) {
 					Notice notice = new Notice(rs.getInt("no"),
+											   rs.getString("name"),
 							                   rs.getString("title"),
-							                   rs.getString("content"),
+							                   rs.getString("comment"),
 							                   rs.getString("resdate"),
 							                   rs.getInt("visited"));
 					result = notice;
@@ -113,14 +115,14 @@ public class NoticeDAO {
 	}
 	
 	
-	public int insertNoticeOne(int no, String title,String content) {
+	public int updateNoticeOne(int no, String title,String comment) {
 		int cnt = 0;
 		try {
 			con = db.connect();
 			try {
 				pstmt = con.prepareStatement(MysqlDB.UPDATENOTICE);
 				pstmt.setString(1, title);
-				pstmt.setString(2, content);
+				pstmt.setString(2, comment);
 				pstmt.setInt(3, no);
 				cnt = pstmt.executeUpdate();
 			} catch (SQLException e) {

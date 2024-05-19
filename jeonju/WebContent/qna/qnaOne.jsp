@@ -6,7 +6,7 @@
 <meta charset="UTF-8">
 <title>QNA</title>
 <%@ include file="/head.jsp" %>
-<link rel="stylesheet" href="${hpath }/css/header2.css" />
+<link rel="stylesheet" href="${ hpath}/css/header2.css?after"/>
 <style>
   .breadcrumb { 
     font-size: 0.9em; 

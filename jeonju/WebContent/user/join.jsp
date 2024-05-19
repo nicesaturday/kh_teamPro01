@@ -18,7 +18,6 @@
 }
 
 body {
-  font-family: "Open Sans", Helvetica, Arial, sans-serif;
   background: #ededed;
 }
 
@@ -230,7 +229,13 @@ h2 {
   transition: transform 1.2s ease-in-out;
 }
 
-label {
+.form.sign-in label {
+  display:flow-root;
+  width: 260px;
+  margin: 35px auto 0;
+  text-align: center;
+}
+.form.sign-up label {
   display:flow-root;
   width: 260px;
   margin: 35px auto 0;
@@ -326,6 +331,9 @@ input {
 }
 .cont.s--signup .sign-up {
   transform: translate3d(0, 0, 0);
+}
+#hd #hd_main_wrap {
+  padding-top: 20px ;
 }
 
     </style>

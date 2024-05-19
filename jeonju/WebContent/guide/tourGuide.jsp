@@ -6,7 +6,7 @@
 <meta charset="UTF-8">
 <title>투어 코스</title>
 <%@ include file="/head.jsp" %>
-<link rel="stylesheet" href="${hpath }/css/header2.css" />
+<link rel="stylesheet" href="${hpath }/css/header2.css?after" />
 <style>
 #content {width: 100%;}
 .breadcrumb { font-size: 0.9em; margin-bottom: 10px; color:rgb(134, 134, 134); text-align: center; }

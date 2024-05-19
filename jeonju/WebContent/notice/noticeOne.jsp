@@ -6,7 +6,7 @@
 <meta charset="UTF-8">
 <title>notice</title>
 <%@ include file="/head.jsp" %>
-<link rel="stylesheet" href="${hpath }/css/header2.css" />
+<link rel="stylesheet" href="${hpath }/css/header2.css?after" />
 <style>
   .breadcrumb { 
     font-size: 0.9em; 
@@ -115,8 +115,9 @@
     </div>
   </div>
   <div id="notice_btnblock">
-
+  <c:if test="${sname eq '관리자' }">
    <button type="button" class="notice_btnblock_btn1 a">글 수정</button>
+   </c:if>
    <button type="button" class="notice_btnblock_btn1"><a href="${hpath }/notice_list">목록으로</a></button>
 
         <button type="button" class="notice_btnblock_btn2 a">취소</button>
@@ -125,9 +126,9 @@
 
     <input type="password" style="display:none" value=${notice.no } name="no">
 
-   
+   <c:if test="${sname eq '관리자' }">
        <button type="button" id="notice_btnblock_btn3" onclick="onDelete()"><a href="${hpath }/notice_delete?no=${notice.no}">글삭제</a></button>
-
+   </c:if>
   </div>
 </form>
 

@@ -6,7 +6,7 @@
 <meta charset="UTF-8">
 <title>주요 명소</title>
 <%@ include file="/head.jsp" %> 
-<link rel="stylesheet" href="${ hpath}/css/header2.css"/>
+<link rel="stylesheet" href="${ hpath}/css/header2.css?after"/>
 <link rel="stylesheet" href="${ hpath}/css/button.css"/>
 <link rel="stylesheet" href="${ hpath}/css/modal.css"/>
 <style>

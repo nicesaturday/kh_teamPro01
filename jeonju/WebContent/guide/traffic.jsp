@@ -8,7 +8,7 @@
 <meta charset="UTF-8">
 <title>교통 정보</title>
 <%@ include file="/head.jsp" %>
-<link rel="stylesheet" href="${hpath }/css/header2.css?after"/>
+<link rel="stylesheet" href="${hpath }/css/header2.css?after2"/>
 <% 
   Date date = new Date();
   SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");

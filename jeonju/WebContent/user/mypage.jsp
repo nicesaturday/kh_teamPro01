@@ -7,7 +7,7 @@
 <title>마이페이지</title>
 <%@ include file="/head.jsp" %>
 <script src="https://t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
-<link rel="stylesheet" href="${hpath }/css/header2.css" />
+<link rel="stylesheet" href="${ hpath}/css/header2.css?after"/>
 <style>
 .breadcrumb { 
   font-size: 0.9em; 

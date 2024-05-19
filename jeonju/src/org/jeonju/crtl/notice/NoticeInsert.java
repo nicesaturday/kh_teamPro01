@@ -35,8 +35,9 @@ public class NoticeInsert extends HttpServlet {
 		response.setCharacterEncoding("UTF-8");
 		response.setContentType("text/html; charset=UTF-8");
 		
+		String admin = "관리자";
 		HttpSession session = request.getSession();
-		if((String)session.getAttribute("sname") != "관리자") {
+		if(!session.getAttribute("sname").equals(admin)) {
 			response.sendRedirect("/jeonju");
 			return;
 		}

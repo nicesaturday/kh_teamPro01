@@ -12,14 +12,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>로그인</title>
 <%@ include file="/head.jsp" %>
-<link rel="stylesheet" href="${hpath }/css/header2.css" />
+<link rel="stylesheet" href="${hpath }/css/header2.css?after" />
 <style>
 *, *:before, *:after {
   box-sizing: border-box;
 }
 
 body {
-  font-family: "Open Sans", Helvetica, Arial, sans-serif;
   background: #F2F2F2;
 }
 
@@ -27,7 +26,6 @@ input, button {
   border: none;
   outline: none;
   background: none;
-  font-family: "Open Sans", Helvetica, Arial, sans-serif;
 }
 
 .tip {
@@ -188,7 +186,7 @@ h2 {
   display: block;
   text-align: center;
 }
- label {
+.form.sign-in label {
   width: 260px;
   margin: 25px auto 0;
   text-align: center;
@@ -250,6 +248,9 @@ input {
 }
 .cont.s--signup .sign-up {
   transform: translate3d(0, 0, 0);
+}
+#hd #hd_main_wrap {
+  padding-top: 20px ;
 }
 
 

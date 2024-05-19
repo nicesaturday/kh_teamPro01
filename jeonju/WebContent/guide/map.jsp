@@ -6,7 +6,7 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <%@ include file="/head.jsp" %>
-<link rel="stylesheet" href="${hpath }/css/header2.css" />
+<link rel="stylesheet" href="${hpath }/css/header2.css?after" />
 <style>
 #content {width: 100%; display: flex; align-items: center; justify-content: center; flex-direction: column;}
 .breadcrumb { font-size: 0.9em; margin-bottom: 10px; color:rgb(134, 134, 134) }

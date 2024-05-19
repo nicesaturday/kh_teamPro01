@@ -119,5 +119,19 @@
 	    }
 	    
 	});
+	 //윈도우 사이즈가 증가하면 다시 원상태로 돌아온다.
+	 window.onresize = function(e) {
+		 var innerWidth = window.innerWidth;
+		 if(innerWidth > "1200") {
+			 gnb2.style.display = 'block'
+			 backgroundbg.style.height = 'auto';
+		 }
+	 }
+	 
+
+	 
+	 
+	 
+	 
 
 </script>

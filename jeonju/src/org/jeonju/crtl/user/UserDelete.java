@@ -38,10 +38,7 @@ public class UserDelete extends HttpServlet {
 		
 		int cnt = 0;
 		HttpSession session = request.getSession();
-		if((String)session.getAttribute("sname") != null) {
-			response.sendRedirect("/jeonju");
-			return;
-		}
+		
 		int no = (Integer)session.getAttribute("sno");
 		
 		

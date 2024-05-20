@@ -289,7 +289,7 @@
         <div class="box_group">
             <div class='slide-track'>
             <div class="box_wrap">
-                <div class="train-card"><a href="">
+                <div class="train-card"><a href="http://www.jeondong.or.kr/main/?load_popup=1">
                     <div class="box" id="box1">
                         <img src="${hpath }/img/main/church.jpg" alt="전동성당">
                     </div>
@@ -306,7 +306,7 @@
                 </a></div>
             </div>
             <div class="box_wrap">
-                <div class="train-card"><a href="">
+                <div class="train-card"><a href="https://www.jeonju.go.kr/qrcode/101.jsp?landingurl=101">
                     <div class="box" id="box2">
                         <img src="${hpath }/img/main/box2.jpg" alt="경기전">
                     </div>
@@ -323,14 +323,14 @@
                 </a></div>
             </div>
             <div class="box_wrap">
-                <div class="train-card"><a href="">
+                <div class="train-card"><a href="https://www.jbcia.or.kr/board/bbs/board.php?bo_table=tour&wr_id=163&&sca=%EC%A0%84%EC%A3%BC%EC%8B%9C&lnb=6010">
                     <div class="box" id="box3">
-                        <img src="${hpath }/img/main/box3.jpg" alt="영중호수">
+                        <img src="${hpath }/img/main/box3.jpg" alt="아중호수">
                     </div>
                     <table>
                         <tr>
                             <th>장소</th>
-                            <td>영중호수</td>
+                            <td>아중호수</td>
                         </tr>
                         <tr>
                             <th>위치</th>
@@ -340,9 +340,9 @@
                 </a></div>
             </div>
             <div class="box_wrap">
-                <div class="train-card"><a href="">
+                <div class="train-card"><a href="https://www.ex.co.kr/arboretum/">
                     <div class="box" id="box3">
-                        <img src="${hpath }/img/main/sumok.jpg" alt="영중호수">
+                        <img src="${hpath }/img/main/sumok.jpg" alt="아중호수">
                     </div>
                     <table>
                         <tr>
@@ -357,7 +357,7 @@
                 </a></div>
             </div>
             <div class="box_wrap">
-                <div class="train-card"><a href="">
+                <div class="train-card"><a href="http://www.jeondong.or.kr/main/?load_popup=1">
                     <div class="box" id="box1">
                         <img src="${hpath }/img/main/church.jpg" alt="전동성당">
                     </div>
@@ -374,7 +374,7 @@
                 </a></div>
             </div>
             <div class="box_wrap">
-                <div class="train-card"><a href="">
+                <div class="train-card"><a href="https://www.jeonju.go.kr/qrcode/101.jsp?landingurl=101">
                     <div class="box" id="box2">
                         <img src="${hpath }/img/main/box2.jpg" alt="경기전">
                     </div>
@@ -391,14 +391,14 @@
                 </a></div>
             </div>
             <div class="box_wrap">
-                <div class="train-card"><a href="">
+                <div class="train-card"><a href="https://www.jbcia.or.kr/board/bbs/board.php?bo_table=tour&wr_id=163&&sca=%EC%A0%84%EC%A3%BC%EC%8B%9C&lnb=6010">
                     <div class="box" id="box3">
-                        <img src="${hpath }/img/main/box3.jpg" alt="영중호수">
+                        <img src="${hpath }/img/main/box3.jpg" alt="아중호수">
                     </div>
                     <table>
                         <tr>
                             <th>장소</th>
-                            <td>영중호수</td>
+                            <td>아중호수</td>
                         </tr>
                         <tr>
                             <th>위치</th>
@@ -408,9 +408,9 @@
                 </a></div>
             </div>
             <div class="box_wrap">
-                <div class="train-card"><a href="">
+                <div class="train-card"><a href="https://www.ex.co.kr/arboretum/">
                     <div class="box" id="box3">
-                        <img src="${hpath }/img/main/sumok.jpg" alt="영중호수">
+                        <img src="${hpath }/img/main/sumok.jpg" alt="아중호수">
                     </div>
                     <table>
                         <tr>
@@ -425,7 +425,7 @@
                 </a></div>
             </div>
             <div class="box_wrap">
-                <div class="train-card"><a href="">
+                <div class="train-card"><a href="http://www.jeondong.or.kr/main/?load_popup=1">
                     <div class="box" id="box1">
                         <img src="${hpath }/img/main/church.jpg" alt="전동성당">
                     </div>
@@ -442,7 +442,7 @@
                 </a></div>
             </div>
             <div class="box_wrap">
-                <div class="train-card"><a href="">
+                <div class="train-card"><a href="https://www.jeonju.go.kr/qrcode/101.jsp?landingurl=101">
                     <div class="box" id="box2">
                         <img src="${hpath }/img/main/box2.jpg" alt="경기전">
                     </div>
@@ -459,14 +459,14 @@
                 </a></div>
             </div>
             <div class="box_wrap">
-                <div class="train-card"><a href="">
+                <div class="train-card"><a href="https://www.jbcia.or.kr/board/bbs/board.php?bo_table=tour&wr_id=163&&sca=%EC%A0%84%EC%A3%BC%EC%8B%9C&lnb=6010">
                     <div class="box" id="box3">
-                        <img src="${hpath }/img/main/box3.jpg" alt="영중호수">
+                        <img src="${hpath }/img/main/box3.jpg" alt="아중호수">
                     </div>
                     <table>
                         <tr>
                             <th>장소</th>
-                            <td>영중호수</td>
+                            <td>아중호수</td>
                         </tr>
                         <tr>
                             <th>위치</th>
@@ -476,9 +476,9 @@
                 </a></div>
             </div>
             <div class="box_wrap">
-                <div class="train-card"><a href="">
+                <div class="train-card"><a href="https://www.ex.co.kr/arboretum/">
                     <div class="box" id="box3">
-                        <img src="${hpath }/img/main/sumok.jpg" alt="영중호수">
+                        <img src="${hpath }/img/main/sumok.jpg" alt="아중호수">
                     </div>
                     <table>
                         <tr>

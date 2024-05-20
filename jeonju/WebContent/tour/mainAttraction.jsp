@@ -110,8 +110,10 @@
         }
         #grid_main div img{
             width: 300px;
-            height: 300px;
-            align-self: center;
+            height:300px;
+            overflow: hidden;
+            display:flex; 
+            justify-content: center;
         }
         .item_title {
             font-weight: 700;

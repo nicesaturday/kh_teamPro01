@@ -1,10 +1,10 @@
 #프로젝트 개발 보고서(Project Development Report)
 ----------------------------------------------
-## 1. 프로젝트 개요(Project Outline)
+## 1. 프로젝트 개요(Project Outline) 
 
 ```
 전주시를 여행하기 위해서 필요한 정보들을 모아놓은
-웹 어플리케이션을 개발하게 되었다. 
+웹 어플리케이션을 개발한다. 
 ```
 
 ## 2. 프로젝트 목적(Project Purpose)
@@ -13,7 +13,7 @@
 숙박 및 축제와 기타 행사들을 소개해주려고 한다.
 ```
 
-## 3. 프로젝트 개발 환경 정보(Project Development Envirment)
+## 3. 프로젝트 개발 환경 정보(Project Development Envirment)   
 
 
     - Topic : Jeonju intro web application
@@ -49,18 +49,19 @@
 <br>
 
 #### 4-1-1. 자료 수집
-
+![워드 클라우드](./info/wordcloud.png)
 
 #### 4-1-2. 콘텐츠 분류
 ![카드 소팅](./info/boardmix.png)
 
 #### 4-1-3. 서비스 흐름 설계
-
+![서비스 설계](./info/service.drawio.png)
 
 ### 4-2. 데이터베이스 설계(Database Design)
 
 #### 4-2-1. 개념적 설계
-![개념적 설계](./info/erd/teamPro01_conceptual_erd.drawio.png)
+![개념적 설계](./info/erd/conceptual_erd.drawio.png)
 ### 4-2-2. 논리적 설계
-![논리적 설계](./info/erd/teamPro01_logical_erd.drawio.png)
+![논리적 설계](./info/erd/logical_erd.drawio.png)
 ### 4-2-3. 물리적 설계
+![물리적 설계](./info/erd/physical_erd.drawio.png)

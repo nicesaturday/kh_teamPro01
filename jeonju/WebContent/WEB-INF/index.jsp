@@ -514,43 +514,43 @@
             <ul class="icon_lst">
                
                 <li>
-                    <a href="">
+                    <a href="${hpath }/tour_guide">
                         <div class="icon_fr"><img src="${hpath }/img/icon/img_link04.png" alt="아이콘2"></div>
                         <h3 class="icon_tit">도보 해설투어</h3>
                     </a>
                 </li>
                 <li>
-                    <a href="">
+                    <a target="_blank" href="https://www.agoda.com/ko-kr/city/jeonju-si-kr.html?site_id=1922868&tag=89250035-e814-47b1-9131-303a7e936f96&gad_source=1&device=c&network=g&adid=693618693758&rand=18421755192373108443&expid=&adpos=&aud=kwd-343251542145&gclid=Cj0KCQjwxqayBhDFARIsAANWRnQ4rBbAlvL87l-eHeAuNYlJ9y5r5Uw65BINAZxm1VOwpC3sfJLAnZwaAvpFEALw_wcB&pslc=1">
                         <div class="icon_fr"><img src="${hpath }/img/icon/img_link08.png" alt="아이콘3"></div>
                         <h3 class="icon_tit">숙박</h3>
                     </a>
                 </li>
                 <li>
-                    <a href="">
+                    <a href="${hpath }/cheongnyeon_mall">
                         <div class="icon_fr"><img src="${hpath }/img/icon/img_link02.png" alt="아이콘4"></div>
                         <h3 class="icon_tit">쇼핑</h3>
                     </a>
                 </li>
                 <li>
-                    <a href="">
+                    <a href="${hpath }/traffic">
                         <div class="icon_fr"><img src="${hpath }/img/icon/img_link05.png" alt="아이콘5"></div>
                         <h3 class="icon_tit">대중교통</h3>
                     </a>
                 </li>
                 <li>
-                    <a href="">
+                    <a href="${hpath }/map">
                         <div class="icon_fr"><img src="${hpath }/img/icon/img_link01.png" alt="아이콘6"></div>
                         <h3 class="icon_tit">관광지도</h3>
                     </a>
                 </li>
                 <li>
-                    <a href="">
+                    <a href="${hpath }/notice_list">
                         <div class="icon_fr"><img src="${hpath }/img/icon/img_quick01.png" alt="아이콘7"></div>
                         <h3 class="icon_tit">공지사항</h3>
                     </a>
                 </li>
                 <li>
-                    <a href="">
+                    <a href="${hpath }/qna_list">
                         <div class="icon_fr"><img src="${hpath }/img/icon/img_quick01.png" alt="아이콘8"></div>
                         <h3 class="icon_tit">QnA</h3>
                     </a>

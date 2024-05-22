@@ -33,7 +33,7 @@ public interface SqlLang {
 	final static String IMPROVEHEADCOUNT = "update tourism set max_headcount=max_headcount+ ? where no = ?";
 	
 	//notice sql
-	final static String GETNOTICE = "select * from notice order by no";
+	final static String GETNOTICE = "select * from notice order by no desc";
 	final static String INSNOTICE = "insert into notice values(default,default,?,?,default,default)";
 	final static String GETNOTICEONE = "select * from notice where no = ?";
 	final static String DELETENOTICE = "delete from notice where no = ?";

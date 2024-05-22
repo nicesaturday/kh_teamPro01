@@ -37,7 +37,7 @@
                    <div class="swiper-wrapper">
                        <div class="swiper-slide">
                            <div class="tourcourse_wrap">
-                               <a href="tourcourse.html" >
+                               <a href="${hpath }/tour_guide" >
                                    <div class="main_tour" id="main_tour1">
                                        <figure class="img1"><img src="${hpath }/img/main/moon2.jpg" alt="전주한옥마을 골목길"></figure>
                                        <div class="main_tourtab">
@@ -74,7 +74,7 @@
                        </div>
                        <div class="swiper-slide">
                            <div class="tourcourse_wrap">
-                               <a href="tourcourse.html" >
+                               <a href="${hpath }/tour_guide" >
                                    <div class="main_tour" id="main_tour2">
                                        <figure class="img1"><img src="${hpath }/img/main/gyeongijeon450X500.jpg" alt="경기전"></figure>
                                        <div class="main_tourtab">
@@ -111,9 +111,9 @@
                        </div>
                        <div class="swiper-slide">
                            <div class="tourcourse_wrap">
-                               <a href="tourcourse.html" >
+                               <a href="${hpath }/tour_guide" >
                                    <div class="main_tour" id="main_tour3">
-                                       <figure class="img1"><img src="${hpath }/img/main/omok450X500.jpg" alt="경기전"></figure>
+                                       <figure class="img1"><img src="${hpath }/img/main/omok450X500.jpg" alt="태조 이성계 로드"></figure>
                                        <div class="main_tourtab">
                                            <div class="tourtab_head">
                                                <div class="tourtab_title">태조 이성계 로드</div>
@@ -148,9 +148,9 @@
                        </div>
                        <div class="swiper-slide">
                            <div class="tourcourse_wrap">
-                               <a href="tourcourse.html" >
+                               <a href="${hpath }/tour_guide" >
                                    <div class="main_tour" id="main_tour4">
-                                       <figure class="img1"><img src="${hpath }/img/main/gyeongijeon450X500.jpg" alt="경기전"></figure>
+                                       <figure class="img1"><img src="${hpath }/img/main/gyeongijeon450X500.jpg" alt="전주부성 옛길"></figure>
                                        <div class="main_tourtab">
                                            <div class="tourtab_head">
                                                <div class="tourtab_title">전주부성 옛길</div>
@@ -185,9 +185,9 @@
                        </div>
                        <div class="swiper-slide">
                            <div class="tourcourse_wrap">
-                               <a href="tourcourse.html" >
+                               <a href="${hpath }/tour_guide" >
                                    <div class="main_tour" id="main_tour5">
-                                       <figure class="img1"><img src="${hpath }/img/main/hyanggyo450X500.jpg" alt="경기전"></figure>
+                                       <figure class="img1"><img src="${hpath }/img/main/hyanggyo450X500.jpg" alt="향교 선비길 투어"></figure>
                                        <div class="main_tourtab">
                                            <div class="tourtab_head">
                                                <div class="tourtab_title">향교 선비길 투어</div>
@@ -223,9 +223,9 @@
                        </div>
                        <div class="swiper-slide">
                            <div class="tourcourse_wrap">
-                               <a href="tourcourse.html" >
+                               <a href="${hpath }/tour_guide" >
                                    <div class="main_tour" id="main_tour6">
-                                       <figure class="img1"><img src="${hpath }/img/main/jeonlagamyoung450X500.jpg" alt="경기전"></figure>
+                                       <figure class="img1"><img src="${hpath }/img/main/jeonlagamyoung450X500.jpg" alt="전라감영"></figure>
                                        <div class="main_tourtab">
                                            <div class="tourtab_head">
                                                <div class="tourtab_title">전라감영</div>
@@ -500,10 +500,10 @@
         <div class="subtitle">직접 느끼는 전주의 매력</div>
         <div id="box2_group">
             <div id="box2_wrap">
-                <div class="box2" id="box2_1"><a href="">한복문화주간</a></div>
-                <div class="box2" id="box2_2"><a href="">전주대사습놀이</a></div>
-                <div class="box2" id="box2_3"><a href="">전주세계소리축제</a></div>
-                <div class="box2" id="box2_4"><a href="">전주정원박람회</a></div>
+                <div class="box2" id="box2_1"><a href="${hpath }/festival_list">한복문화주간</a></div>
+                <div class="box2" id="box2_2"><a href="${hpath }/festival_list">전주대사습놀이</a></div>
+                <div class="box2" id="box2_3"><a href="${hpath }/festival_list">전주세계소리축제</a></div>
+                <div class="box2" id="box2_4"><a href="${hpath }/festival_list">전주정원박람회</a></div>
 
             </div>
         </div>

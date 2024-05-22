@@ -49,7 +49,7 @@
                     </c:if>
                     <c:if test="${not empty sname}" >
                        <div><a href="${hpath }/logout">로그아웃</a></div>
-                       <li><a href="${hpath }/">예약확인</a></li>
+                       <li><a href="${hpath }/mypage">예약확인</a></li>
                     </c:if>                           
                        <li><a href="${hpath }/term">이용약관</a></li>
                        <li><a href="${hpath }/term">개인정보 처리방침</a></li>

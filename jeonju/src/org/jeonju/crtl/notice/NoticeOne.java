@@ -41,7 +41,7 @@ public class NoticeOne extends HttpServlet {
 		int no = Integer.parseInt(request.getParameter("no"));
 		
 		NoticeDAO nd = new NoticeDAO();
-		Notice notice = nd.getNoticeOne(no, false);
+		Notice notice = nd.getNoticeOne(no, true);
 		
 		request.setAttribute("notice", notice);
 		

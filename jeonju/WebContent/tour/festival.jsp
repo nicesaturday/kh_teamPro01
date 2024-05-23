@@ -61,7 +61,6 @@
         }
         #grid_popup_item_main_warp img {
             width: 100%;
-            height: 100%;
             overflow: hidden;
         }
         #grid_popup_item_main_warp div p {
@@ -94,27 +93,37 @@
             border-bottom: 1px solid #F24405;
         }
         #main_wrap {
-            width: 1200px;
             margin: 20px auto;
+            display: flex;
+            justify-content: center;
         }
         #grid_main {
-            width: 960px;
-            margin: 20px auto;
             display: grid;
             grid-template-columns: repeat(3 , 300px);
             grid-template-rows: auto;  
             gap: 30px;
         }
+        @media (max-width: 960px) {
+            #grid_main {
+            grid-template-columns: repeat(2 , 300px);
+            }
+        }
+        @media (max-width: 640px) {
+            #grid_main {
+            grid-template-columns: repeat(1 , 300px);
+            }
+        }
         #grid_main div {
         	padding: 2px;
         }
-        #grid_main div img{
+        .img_wrap{
             width: 300px;
             height:300px;
             overflow: hidden;
             display:flex; 
             justify-content: center;
         }
+        .img_wrap img { height: 100%}
         .item_title {
             font-weight: 700;
         }
@@ -124,9 +133,35 @@
         button.button--moema.item_button {
             font-weight: 700;
             color: #F24405;
-            border-color: #F24405;
+            border: 1px solid #F24405;
             border-radius: 25px;
         }
+         .button--moema { 
+        padding : 0.8em 1.5em;
+        }
+        
+        .item_comment { 
+        line-height: 1.5em;
+        }
+       
+       .item_date {
+       margin-bottom: 30px;
+       }
+       
+       #grid_popup_item_main_warp h5{
+       font-weight: 300; 
+       font-size: 16px;
+       line-height: 1.5em;
+       }
+       
+       #grid_popup_item_main_warp div button {
+       border: 1px solid #F24405;
+       margin-top: 30px
+       }
+       
+       #grid_popup_item_main_warp div button a {
+       color: #F24405;
+       }
         
        
         
@@ -172,7 +207,9 @@
         	<div id="grid_main">
         		<c:forEach var="item" items="${ festivalList}">
         			<div>
-                    	<img src="${ item.img}" alt="전주 축제 사진">
+                        <div class="img_wrap">
+	                    	<img  src="${ item.img}" alt="전주 축제 사진">
+                    	</div>
                     	<div class="item_comment">
                         	<div class="item_title">${ item.name}</div>
                         	<div class="item_detail">

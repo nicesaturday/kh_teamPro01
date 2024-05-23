@@ -8,13 +8,13 @@ import java.sql.SQLException;
 
 public class MysqlDB implements SqlLang {
 	private Connection con = null;
-	private String URL = "jdbc:mysql://localhost:3309/jeonju";
-	final static String USERID = "root";
-	final static String USERPW = "1234";
+	private String URL = "jdbc:mariadb://192.168.20.221:3308/team32";
+	final static String USERID = "team32";
+	final static String USERPW = "cd1234";
 	
 	public Connection connect() {
 		try {
-			Class.forName("com.mysql.cj.jdbc.Driver");
+			Class.forName("org.mariadb.jdbc.Driver");
 			try {
 				con = DriverManager.getConnection(URL,USERID,USERPW);
 			} catch (SQLException e) {e.printStackTrace();}
